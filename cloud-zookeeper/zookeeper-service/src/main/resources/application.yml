@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: springcloud-zookeeper-service
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+      discovery:
+        enabled: true  # 关闭服务发现，否则启动会报异常
+
+logging:
+  level:
+    org.apache.zookeeper.ClientCnxn: WARN

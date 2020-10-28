@@ -1,0 +1,44 @@
+
+server:
+  port: 81
+spring:
+  application:
+    name: zk-openfeign-hystix-consumer
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+#      discovery:
+#        enabled: true
+
+# OpenFeign (可选配置,都不是必须的，默认就行)
+feign:
+  #  httpclient:
+  #    enabled: false # feign 默认使用 httpclint
+  #  okhttp:
+  #    enabled: true  # feign可以用okhttp代替传统的httpclient，性能更好
+  client:
+    config:
+      default:
+        connectTimeout: 5000  # 指定Feign客户端连接提供者的超时时限   取决于网络环境
+        readTimeout: 5000     # 指定Feign客户端从请求到获取到提供者给出的响应的超时时限  取决于业务逻辑运算时间
+  #        loggerLevel: FULL    # 全局默认请求打印日志级别：NONE、BASIC、HEADERS、FULL
+  compression:
+    request:
+      enabled: true  # 是否对请求进行GZIP压缩
+      mime-types: text/xml,application/xml,application/json  # 指定压缩的请求数据类型
+      min-request-size: 2048  # 超过该大小的请求会被压缩
+    response:
+      enabled: true  # 是否对响应进行GZIP压缩
+  hystrix:
+    enabled: true   # 在Feign中开启Hystrix，默认false关闭，要使用fallback功能这里必须启用
+
+# 日志打印级别
+logging:
+  level:
+    com.zja.service.feign.HelloWorldService: debug   # OpenFeign 给特定类指定日志级别
+    org.apache.zookeeper.ClientCnxn: WARN    # zookeeper 注册中心日志级别
+
+#  NONE，无记录（DEFAULT）。
+#  BASIC，只记录请求方法和URL以及响应状态代码和执行时间。
+#  HEADERS，记录基本信息以及请求和响应标头。
+#  FULL，记录请求和响应的头文件，正文和元数据。 推荐使用

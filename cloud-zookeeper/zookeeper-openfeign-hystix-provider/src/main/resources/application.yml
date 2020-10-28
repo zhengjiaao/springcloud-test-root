@@ -1,0 +1,13 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: zk-openfeign-hystix-provider
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+
+logging:
+  level:
+    org.apache.zookeeper.ClientCnxn: WARN

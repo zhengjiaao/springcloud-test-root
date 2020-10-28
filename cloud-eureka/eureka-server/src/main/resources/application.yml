@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: springcloud-eureka-server
+
+# eureka-server 注册中心服务端地址
+eureka:
+  client:
+    registerWithEureka: false  # 默认true，关闭自我注册，默认情况下，服务中心也会作为客户端来自己注册自己
+    fetchRegistry: false       # 默认true，由于注册中心的职责就是维护服务实例，它并不需要去检索服务，不需要立即向eureka服务注册
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/   # eureka-server 注册中心服务端地址
+
