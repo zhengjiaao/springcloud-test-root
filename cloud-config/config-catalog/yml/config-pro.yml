@@ -1,6 +1,6 @@
 attributes:
   # 单个值
-  config: config-pro.properties
+  config: config-pro.yml
   # list
   list:
     - 1

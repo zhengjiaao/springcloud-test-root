@@ -1,6 +1,6 @@
 attributes:
   # 单个值
-  config: config-test.properties
+  config: config-test.yml
   # list
   list:
     - 1
