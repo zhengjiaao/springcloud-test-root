@@ -1,6 +1,6 @@
 
 server:
-  port: 81
+  port: 18001
 spring:
   application:
     name: zk-openfeign-hystix-consumer
@@ -9,6 +9,9 @@ spring:
       connect-string: localhost:2181
 #      discovery:
 #        enabled: true
+    loadbalancer:
+      ribbon:
+        enabled: false
 
 # OpenFeign (可选配置,都不是必须的，默认就行)
 feign:

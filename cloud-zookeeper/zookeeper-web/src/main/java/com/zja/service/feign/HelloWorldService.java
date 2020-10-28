@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Component
 // 服务器降级：熔断-服务宕机处理
 //@FeignClient(name = "springcloud-zookeeper-service", configuration = FeignClientConfig.class,fallback = HelloWorldServiceFallback.class)
-@FeignClient(name = "springcloud-zookeeper-service", fallback = HelloWorldServiceFallback.class)
+@FeignClient(name = "zookeeper-service", fallback = HelloWorldServiceFallback.class)
 public interface HelloWorldService {
 
     @GetMapping("v1/hello")

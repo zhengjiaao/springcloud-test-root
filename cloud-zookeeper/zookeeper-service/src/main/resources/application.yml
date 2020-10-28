@@ -1,9 +1,9 @@
 server:
-  port: 8081
+  port: 18003
 
 spring:
   application:
-    name: springcloud-zookeeper-service
+    name: zookeeper-service
   cloud:
     zookeeper:
       connect-string: localhost:2181
