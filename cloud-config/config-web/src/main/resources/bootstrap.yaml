@@ -12,8 +12,11 @@ spring:
   cloud:
     config:
       enabled: true
-      uri: @config.host@:@config.port@
-      label: @config.label@
-      profile: @config.path@
-      name: @config.name@
+      name: @config.name@  # 对应前配置文件中的{application}
+      profile: @config.profile@  # 对应前配置文件中的{profile}
+      label: @config.label@  # 对应前配置文件的git分支
+      uri: @config.host@:@config.port@  # 配置中心的地址
+
+
+
 

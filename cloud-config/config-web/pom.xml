@@ -73,12 +73,12 @@
                 <!-- Config -->
                 <config.host>localhost</config.host>
                 <config.port>18888</config.port>
-                <!--分支-->
+                <!--对应前配置文件中的{application}-->
+                <config.name>config</config.name>
+                <!--对应前配置文件中的{profile}-->
+                <config.profile>dev</config.profile>
+                <!--对应前配置文件的git分支{label}-->
                 <config.label>master</config.label>
-                <!--配置文件目录-->
-                <config.path>config-catalog/yaml</config.path>
-                <!--配置文件-->
-                <config.name>config-dev.yaml</config.name>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -91,12 +91,12 @@
                 <!-- Config -->
                 <config.host>localhost</config.host>
                 <config.port>18888</config.port>
-                <!--分支-->
+                <!--对应前配置文件中的{application}-->
+                <config.name>config</config.name>
+                <!--对应前配置文件中的{profile}-->
+                <config.profile>pro</config.profile>
+                <!--对应前配置文件的git分支{label}-->
                 <config.label>master</config.label>
-                <!--配置文件目录-->
-                <config.profile>config-catalog/yaml</config.profile>
-                <!--配置文件-->
-                <config.name>config-pro</config.name>
             </properties>
         </profile>
         <profile>
@@ -106,12 +106,12 @@
                 <!-- Config -->
                 <config.host>localhost</config.host>
                 <config.port>18888</config.port>
-                <!--分支-->
+                <!--对应前配置文件中的{application}-->
+                <config.name>config</config.name>
+                <!--对应前配置文件中的{profile}-->
+                <config.profile>test</config.profile>
+                <!--对应前配置文件的git分支{label}-->
                 <config.label>master</config.label>
-                <!--配置文件目录-->
-                <config.profile>config-catalog/yaml</config.profile>
-                <!--配置文件-->
-                <config.name>config-pro</config.name>
             </properties>
         </profile>
     </profiles>

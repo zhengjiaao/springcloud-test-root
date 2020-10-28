@@ -1,17 +1,1 @@
-attributes:
-  # 单个值
-  config: config.yml
-  # list
-  list:
-    - 1
-    - 2
-  # map
-  map:
-    name: 张三
-    age: 20
-
-stringvalue: dev
-
-dynamicvalue:
-  data: asd
-  value: 123
+config: yml
