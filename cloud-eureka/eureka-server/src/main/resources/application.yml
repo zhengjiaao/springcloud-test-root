@@ -1,9 +1,9 @@
 server:
-  port: 8080
+  port: 16000
 
 spring:
   application:
-    name: springcloud-eureka-server
+    name: eureka-server
 
 # eureka-server 注册中心服务端地址
 eureka:

@@ -1,15 +1,15 @@
 server:
-  port: 8082   #端口号
+  port: 18002   #端口号
 
 spring:
   application:
-    name: springcloud-eureka-client   # 服务名称
+    name: eureka-client   # 服务名称
 
 eureka:
   client:
     service-url:
       registerWithEureka: false # 默认true，关闭自我注册，默认情况下，服务中心也会作为客户端来自己注册自己
-      defaultZone: http://localhost:8080/eureka/  # 服务注册中心的地址
+      defaultZone: http://localhost:16000/eureka/  # 服务注册中心的地址
 
 # OpenFeign (可选配置,都不是必须的，默认就行)
 feign:

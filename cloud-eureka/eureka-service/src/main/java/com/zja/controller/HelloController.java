@@ -18,13 +18,16 @@ import java.util.concurrent.TimeUnit;
 @RequestMapping
 @RestController("ServiceHelloController")
 public class HelloController {
+
     @GetMapping("v1/hello")
-    public String get(@RequestParam String name){
+    public String get(@RequestParam String name) {
         try {
             TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return "name: "+name;
+
+        return "name: " + name;
     }
+
 }

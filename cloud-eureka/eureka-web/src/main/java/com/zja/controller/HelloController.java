@@ -38,14 +38,14 @@ public class HelloController {
         System.out.println("响应结果： " + forObject.toString());
 
         //第二种方式：Ribbon 实现负载均衡
-        ServiceInstance serviceInstance = loadBalancerClient.choose("springcloud-eureka-service");
+        ServiceInstance serviceInstance = loadBalancerClient.choose("eureka-service");
 
         String url = "http://"+serviceInstance.getHost()+":"+serviceInstance.getPort()+"v1/hello?name="+name;
         String object = restTemplate.getForObject(url, String.class);
         System.out.println("响应结果2： " + object.toString());*/
 
         //第二种方式：RestTemplate+Ribbon 实现负载均衡 ，推荐使用
-        String forObject = restTemplate.getForObject("http://SPRINGCLOUD-EUREKA-SERVICE/v1/hello?name=" + name, String.class);
+        String forObject = restTemplate.getForObject("http://EUREKA-SERVICE/v1/hello?name=" + name, String.class);
         System.out.println("restTemplate+Ribbon 负载均衡响应结果： " + forObject.toString());
         return forObject;
     }

@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
  * Email: zhengja@dist.com.cn
  * Desc：调用的是 SPRINGCLOUD-EUREKA-SERVICE 服务
  */
-@FeignClient(name = "SPRINGCLOUD-EUREKA-SERVICE") //要调用的服务器名称
+@FeignClient(name = "EUREKA-SERVICE") //要调用的服务器名称
 public interface ServiceOpenFeign {
+
     @GetMapping("/v1/hello")
     String hello(@RequestParam("name") String name);
+
 }
