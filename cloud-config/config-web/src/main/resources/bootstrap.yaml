@@ -14,6 +14,6 @@ spring:
       enabled: true
       uri: @config.host@:@config.port@
       label: @config.label@
-#      profile: @config.profile@
+      profile: @config.profile@
       name: @config.name@
 

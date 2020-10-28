@@ -10,4 +10,4 @@ attributes:
     name: 张三
     age: 20
 
-value: dev
+stringvalue: dev

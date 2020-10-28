@@ -25,15 +25,15 @@ public class TestController {
     @Autowired
     private MyAttributes myAttributes;
 
-    @Value("value")
-    private String value;
+    @Value("stringvalue")
+    private String stringvalue;
 
     @GetMapping("get")
     public Object myAttributes() {
         Map map = new HashMap();
         map.put("myAttributes",myAttributes);
-        map.put("value",value);
-        return myAttributes;
+        map.put("stringvalue",stringvalue);
+        return map;
     }
 
 }
