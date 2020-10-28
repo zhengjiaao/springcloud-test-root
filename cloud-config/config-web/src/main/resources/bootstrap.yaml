@@ -1,0 +1,19 @@
+server:
+  port: 18006
+spring:
+  profiles:
+    active: @profile.active@
+  application:
+    name: @artifactId@
+  #开启热部署
+  devtools:
+    restart:
+      enabled: true
+  cloud:
+    config:
+      enabled: true
+      uri: @config.host@:@config.port@
+      label: @config.label@
+      profile: @config.profile@
+      name: @config.name@
+

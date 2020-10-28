@@ -1,9 +1,0 @@
-server:
-  port: 18006
-spring:
-  application:
-    name: config-web
-  #开启热部署
-  devtools:
-    restart:
-      enabled: true

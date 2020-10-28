@@ -60,4 +60,54 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profile.active>dev</profile.active>
+                <!-- Config -->
+                <config.host>localhost</config.host>
+                <config.port>18888</config.port>
+                <!--分支-->
+                <config.label>master</config.label>
+                <!--配置文件目录-->
+                <config.profile>config-catalog/yml</config.profile>
+                <!--配置文件-->
+                <config.name>config-dev</config.name>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>pro</id>
+            <properties>
+                <profile.active>pro</profile.active>
+                <!-- Config -->
+                <config.host>localhost</config.host>
+                <config.port>18888</config.port>
+                <!--分支-->
+                <config.label>master</config.label>
+                <!--配置文件目录-->
+                <config.profile>config-catalog/yml</config.profile>
+                <!--配置文件-->
+                <config.name>config-pro</config.name>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <profile.active>test</profile.active>
+                <!-- Config -->
+                <config.host>localhost</config.host>
+                <config.port>18888</config.port>
+                <!--分支-->
+                <config.label>master</config.label>
+                <!--配置文件目录-->
+                <config.profile>config-catalog/yml</config.profile>
+                <!--配置文件-->
+                <config.name>config-pro</config.name>
+            </properties>
+        </profile>
+    </profiles>
 </project>
