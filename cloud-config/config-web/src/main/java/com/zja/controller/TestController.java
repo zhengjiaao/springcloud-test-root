@@ -29,7 +29,7 @@ public class TestController {
     @Autowired
     private MyAttributes myAttributes;
 
-    //@Value("${stringvalue}")
+    @Value("${stringvalue}")
     private String stringvalue;
 
     @GetMapping("get")

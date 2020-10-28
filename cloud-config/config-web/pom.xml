@@ -70,9 +70,8 @@
             <id>dev</id>
             <properties>
                 <profile.active>dev</profile.active>
-                <!-- Config -->
-                <config.host>localhost</config.host>
-                <config.port>18888</config.port>
+                <!-- Config 配置服务地址 -->
+                <config.host>http://localhost:18888/</config.host>
                 <!--对应前配置文件中的{application}-->
                 <config.name>config</config.name>
                 <!--对应前配置文件中的{profile}-->
@@ -88,9 +87,8 @@
             <id>pro</id>
             <properties>
                 <profile.active>pro</profile.active>
-                <!-- Config -->
-                <config.host>localhost</config.host>
-                <config.port>18888</config.port>
+                <!-- Config 配置服务地址 -->
+                <config.host>http://localhost:18888/</config.host>
                 <!--对应前配置文件中的{application}-->
                 <config.name>config</config.name>
                 <!--对应前配置文件中的{profile}-->
@@ -103,9 +101,8 @@
             <id>test</id>
             <properties>
                 <profile.active>test</profile.active>
-                <!-- Config -->
-                <config.host>localhost</config.host>
-                <config.port>18888</config.port>
+                <!-- Config 配置服务地址 -->
+                <config.host>http://localhost:18888/</config.host>
                 <!--对应前配置文件中的{application}-->
                 <config.name>config</config.name>
                 <!--对应前配置文件中的{profile}-->
