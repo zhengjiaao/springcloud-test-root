@@ -9,3 +9,5 @@ attributes:
   map:
     name: 张三
     age: 20
+
+value: dev

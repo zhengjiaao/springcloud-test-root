@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Company: 上海数慧系统技术有限公司
  * Department: 数据中心
@@ -21,8 +25,14 @@ public class TestController {
     @Autowired
     private MyAttributes myAttributes;
 
+    @Value("value")
+    private String value;
+
     @GetMapping("get")
     public Object myAttributes() {
+        Map map = new HashMap();
+        map.put("myAttributes",myAttributes);
+        map.put("value",value);
         return myAttributes;
     }
 
