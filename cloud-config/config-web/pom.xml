@@ -58,6 +58,11 @@
             <version>1.16.18</version>
             <scope>compile</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+        </dependency>
     </dependencies>
 
     <profiles>
@@ -71,7 +76,7 @@
                 <!--分支-->
                 <config.label>master</config.label>
                 <!--配置文件目录-->
-                <config.profile>config-catalog/yml</config.profile>
+                <config.profile>config-catalog/yaml</config.profile>
                 <!--配置文件-->
                 <config.name>config-dev</config.name>
             </properties>
@@ -89,7 +94,7 @@
                 <!--分支-->
                 <config.label>master</config.label>
                 <!--配置文件目录-->
-                <config.profile>config-catalog/yml</config.profile>
+                <config.profile>config-catalog/yaml</config.profile>
                 <!--配置文件-->
                 <config.name>config-pro</config.name>
             </properties>
@@ -104,10 +109,35 @@
                 <!--分支-->
                 <config.label>master</config.label>
                 <!--配置文件目录-->
-                <config.profile>config-catalog/yml</config.profile>
+                <config.profile>config-catalog/yaml</config.profile>
                 <!--配置文件-->
                 <config.name>config-pro</config.name>
             </properties>
         </profile>
     </profiles>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>*.properties</exclude>
+                    <exclude>*.yaml</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>bootstrap.properties</include>
+                    <include>bootstrap.yaml</include>
+                    <include>application.properties</include>
+                    <include>application-${profile.active}.properties</include>
+                    <include>application.yaml</include>
+                    <include>application-${profile.active}.yaml</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+
 </project>

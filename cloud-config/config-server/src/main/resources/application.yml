@@ -11,5 +11,5 @@ spring:
           uri: https://github.com/zhengjiaao/springcloud-test-root.git  #配置文件所在仓库
           username: zhengjiaao       # git仓库的账号
           password: jia15837866351   # git仓库的密码
-          search-paths: cloud-config/config-catalog/yml   # git仓库地址下的相对地址 多个用逗号","分割。
+          search-paths: cloud-config/config-catalog/yaml   # git仓库地址下的相对地址 多个用逗号","分割。
           default-label: master      # 配置文件分支，默认master
