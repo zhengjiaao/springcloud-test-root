@@ -1,5 +1,7 @@
 package com.zja.controller;
 
+import com.zja.entity.MyAttributes;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,11 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
-    @Value("${config.test}")
-    private String configTest;
+    @Autowired
+    private MyAttributes myAttributes;
 
     @GetMapping("get")
-    public Object get() {
-        return configTest;
+    public Object myAttributes() {
+        return myAttributes;
     }
+
 }

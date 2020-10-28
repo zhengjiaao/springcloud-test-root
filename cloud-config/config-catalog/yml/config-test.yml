@@ -1,4 +1,4 @@
-myAttributes:
+attributes:
   # 单个值
   config: config-test.properties
   # list

@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Map;
 
 @Data
+@Component
+@ConfigurationProperties(prefix = "attributes")
 public class MyAttributes {
 
     private String config;
