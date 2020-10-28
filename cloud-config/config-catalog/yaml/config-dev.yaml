@@ -11,3 +11,7 @@ attributes:
     age: 20
 
 stringvalue: dev
+
+dynamicvalue:
+  data: asd
+  value: 123

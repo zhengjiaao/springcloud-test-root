@@ -1,5 +1,6 @@
 package com.zja.controller;
 
+import com.zja.entity.DynamicValue;
 import com.zja.entity.MyAttributes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,6 +24,9 @@ import java.util.Map;
 public class TestController {
 
     @Autowired
+    DynamicValue dynamicValue;
+
+    @Autowired
     private MyAttributes myAttributes;
 
     @Value("stringvalue")
@@ -31,8 +35,9 @@ public class TestController {
     @GetMapping("get")
     public Object myAttributes() {
         Map map = new HashMap();
-        map.put("myAttributes",myAttributes);
-        map.put("stringvalue",stringvalue);
+        map.put("myAttributes", myAttributes);
+        map.put("stringvalue", stringvalue);
+        map.put("dynamicValue", dynamicValue);
         return map;
     }
 
