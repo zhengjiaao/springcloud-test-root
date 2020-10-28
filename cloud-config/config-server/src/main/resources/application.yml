@@ -1,15 +1,15 @@
 server:
-  port: 8764  # 服务指定的端口
+  port: 18005  # 服务指定的端口
 
 spring:
   application:
-    name: springcloud-config-server  # 指定服务名称
+    name: config-server  # 指定服务名称
   cloud:
     config:
       server:
         git:
-          uri: http://elb-791125809.cn-northwest-1.elb.amazonaws.com.cn:5335/zhengja/springboot-test-gitlab.git  # #配置文件所在仓库
-          username: zhengja@dist.com.cn  # git仓库的账号
-          password: dist1583786   # git仓库的密码
-          search-paths: /config   # git仓库地址下的相对地址 多个用逗号","分割。
-          default-label: master # 配置文件分支，默认master
+          uri: https://github.com/zhengjiaao/springcloud-test-root.git  #配置文件所在仓库
+          username: zhengjiaao       # git仓库的账号
+          password: jia15837866351   # git仓库的密码
+          search-paths: /cloud-config/config-catalog/   # git仓库地址下的相对地址 多个用逗号","分割。
+          default-label: master      # 配置文件分支，默认master

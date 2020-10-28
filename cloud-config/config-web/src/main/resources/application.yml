@@ -1,6 +1,5 @@
-
 server:
-  port: 8765
+  port: 18006
 spring:
   application:
-    name: springcloud-config-web
+    name: config-web
