@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: @profile.active@
+  application:
+    name: @artifactId@
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      config:  # ${prefix}-${spring.profiles.active}.${file-extension}
+        server-addr: @nacos.host@:@nacos.port@
+        namespace: @nacos.namespace@
+        group: @nacos.group@
+        file-extension: @nacos.file_extension@
+

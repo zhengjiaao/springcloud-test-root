@@ -1,0 +1,15 @@
+server:
+  port: 18001
+
+attributes:
+  # 单个值
+  config: nacos-config-test.yaml
+  # list
+  list:
+    - 1
+    - 2
+  # map
+  map:
+    name: 张三
+    age: 20
+

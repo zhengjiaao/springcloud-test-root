@@ -34,6 +34,7 @@
     <mavne.surefire.plugin.version>2.19.1</mavne.surefire.plugin.version>
     <!--spring-cloud-->
     <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+    <spring-cloud-alibaba-dependencies.version>2.2.3.RELEASE</spring-cloud-alibaba-dependencies.version>
     <!--spring-boot-->
     <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
   </properties>
@@ -44,12 +45,25 @@
       <id>alimaven</id>
       <name>aliyun maven</name>
       <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
     </repository>
   </repositories>
 
+  <!--spring-cloud-下载仓库地址-->
   <dependencyManagement>
     <dependencies>
-      <!--spring-cloud-下载仓库地址-->
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>${spring-cloud-alibaba-dependencies.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
       <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
@@ -57,17 +71,13 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>${lombok.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <dependencies>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-
 
   <build>
     <pluginManagement>
@@ -100,4 +110,5 @@
       </plugins>
     </pluginManagement>
   </build>
+
 </project>

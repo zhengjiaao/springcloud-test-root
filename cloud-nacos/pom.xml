@@ -14,14 +14,13 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>nacos</module>
-		<module>nacos-web-a</module>
-		<module>nacos-web-b</module>
+		<module>nacos-config</module>
+		<module>nacos-provider</module>
+		<module>nacos-consumer</module>
 	</modules>
 
-	<dependencyManagement>
+<!--	<dependencyManagement>
 		<dependencies>
-			<!--spring-cloud-下载仓库地址-->
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
@@ -29,7 +28,19 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			<dependency>
+				<groupId>com.alibaba.cloud</groupId>
+				<artifactId>spring-cloud-alibaba-dependencies</artifactId>
+				<version>${spring-cloud-alibaba-dependencies.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>${lombok.version}</version>
+			</dependency>
 		</dependencies>
-	</dependencyManagement>
+	</dependencyManagement>-->
 
 </project>
