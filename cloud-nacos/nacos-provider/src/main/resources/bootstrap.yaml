@@ -1,0 +1,31 @@
+server:
+  port: 18001
+spring:
+  profiles:
+    active: @profile.active@
+  application:
+    name: @artifactId@
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: @nacos.host@:@nacos.port@
+        namespace: nacos_dubbo
+      config:
+        server-addr: @nacos.host@:@nacos.port@
+        namespace: nacos_dubbo
+        file-extension: @nacos.file_extension@
+
+dubbo:
+  registry:
+    address: spring-cloud://@nacos.host@
+  #    parameters:
+  #      namespace: @nacos.namespace@  # 可选-命名空间
+  scan:
+    base-packages: com.zja
+  protocol:
+    name: dubbo
+    port: 4001
+#  provider:
+#    filter: dubboExceptionFilter,-exception  # 自定义过滤器

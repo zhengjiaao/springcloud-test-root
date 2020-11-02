@@ -79,8 +79,8 @@
                 <!-- Nacos 配置服务 -->
                 <nacos.host>192.168.159.128</nacos.host>
                 <nacos.port>8848</nacos.port>
-                <nacos.namespace>87d04c20-a5b6-46cd-b2de-3108abbc13fa</nacos.namespace>
-                <nacos.group>NACOS_GROUP</nacos.group>
+                <nacos.namespace>nacos_config</nacos.namespace>
+                <nacos.group>DEFAULT_GROUP</nacos.group>
                 <nacos.file_extension>yaml</nacos.file_extension>
             </properties>
             <activation>
@@ -94,8 +94,8 @@
                 <!-- Nacos 配置服务 -->
                 <nacos.host>192.168.159.128</nacos.host>
                 <nacos.port>8848</nacos.port>
-                <nacos.namespace>87d04c20-a5b6-46cd-b2de-3108abbc13fa</nacos.namespace>
-                <nacos.group>NACOS_GROUP</nacos.group>
+                <nacos.namespace>nacos_config</nacos.namespace>
+                <nacos.group>DEFAULT_GROUP</nacos.group>
                 <nacos.file_extension>yaml</nacos.file_extension>
             </properties>
         </profile>
@@ -106,8 +106,8 @@
                 <!-- Nacos 配置服务 -->
                 <nacos.host>192.168.159.128</nacos.host>
                 <nacos.port>8848</nacos.port>
-                <nacos.namespace>87d04c20-a5b6-46cd-b2de-3108abbc13fa</nacos.namespace>
-                <nacos.group>NACOS_GROUP</nacos.group>
+                <nacos.namespace>nacos_config</nacos.namespace>
+                <nacos.group>DEFAULT_GROUP</nacos.group>
                 <nacos.file_extension>yaml</nacos.file_extension>
             </properties>
         </profile>

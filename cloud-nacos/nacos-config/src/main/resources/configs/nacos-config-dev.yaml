@@ -1,6 +1,3 @@
-server:
-  port: 18001
-
 attributes:
   # 单个值
   config: nacos-config-dev.yaml
