@@ -13,3 +13,4 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:${server.port}/eureka/   # eureka-server 注册中心服务端地址
 
+# 访问：http://localhost:16000
