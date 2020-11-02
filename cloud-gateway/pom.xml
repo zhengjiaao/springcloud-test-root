@@ -15,7 +15,6 @@
 
     <modules>
         <module>gateway</module>
-        <module>gateway-nacos-server</module>
         <module>gateway-web-a</module>
         <module>gateway-web-b</module>
     </modules>

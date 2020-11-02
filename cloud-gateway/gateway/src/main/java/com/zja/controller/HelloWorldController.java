@@ -16,7 +16,7 @@ public class HelloWorldController {
 
     /*@GetMapping("v1/hello")
     public String hello() {
-        return "hello-gateway-web";
+        return "hello-gateway";
     }
 */
 }
