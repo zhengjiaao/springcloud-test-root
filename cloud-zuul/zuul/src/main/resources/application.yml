@@ -1,0 +1,77 @@
+server:
+  port: 18000
+spring:
+  application:
+    name: zuul
+  #开启热部署
+  devtools:
+    restart:
+      enabled: false
+  #网关配置
+  cloud:
+#    config:
+#      discovery:
+#        enabled: false
+#        service-id: config-server
+#      profile: config-dev
+
+# 访问：http://localhost:18000/v1/hello
+# 访问：http://localhost:18000/v2/hello
+# 路由方式是serviceId的方式，那么ribbon的生效，如果是url的方式，则zuul.host开头的生效
+zuul:
+  # 第三方的Filter的启用与禁用
+  PreRequestLogFilter:
+    pre:  # Type
+      disable: false
+  host:
+    connect-timeout-millis: 1000  # 默 2秒超时
+    socket-timeout-millis: 60000  # 默 10秒
+  routes:
+    # 路由别名，无其他意义,随便写
+    route-name:
+      service-id: zuul-web  # 可实现负载均衡,eureka 服务注册时的名称
+#      url: http://localhost:18001  # 无法实现负载均衡，非service-id定位服务，
+      path: /**
+  # 被忽略后无法请求
+#  ignored-services: zuul-web     # * 忽略指定微服务，多个指定微服务以半角逗号分隔
+#  ignoredPatterns: /**/v2/*    # 忽略指定路径, 所有包含/v2/的地址请求
+
+# 自定义服务
+zuul-web:
+  ribbon:
+    listOfServers: localhost:18001,localhost:18002   # 实现负载均衡
+
+# ribbon超时时间设置
+ribbon:
+  eureka:
+    enabled: false  #为Ribbon禁用Eureka,即指定path和URL，又保留Zuul的Hystrix、Ribbon特性
+  ReadTimeout: 30000
+  SocketTimeout: 30000
+# zuul配置了熔断fallback的话，熔断超时也要配置
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 62000
+
+# 服务管理
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:16000/eureka/
+
+# actuator相关配置
+management:
+  endpoints:
+    web:
+      exposure:
+        # 暴露所有监控端点
+        include: '*'
+  endpoint:
+    health:
+      # 总是显示健康检测详情
+      show-details: always
+
+

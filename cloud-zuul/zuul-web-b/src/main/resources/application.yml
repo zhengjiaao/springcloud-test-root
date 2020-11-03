@@ -1,0 +1,15 @@
+server:
+  port: 18002
+spring:
+  application:
+    name: zuul-web-b
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+# 服务管理
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:16000/eureka/
