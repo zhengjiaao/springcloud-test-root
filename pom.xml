@@ -2,114 +2,136 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <packaging>pom</packaging>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
 
-  <parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.2.5.RELEASE</version>
-    <relativePath/> <!-- lookup parent from repository -->
-  </parent>
+    <!--  <parent>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-parent</artifactId>
+          <version>2.3.12.RELEASE</version>
+  &lt;!&ndash;        <version>2.5.5</version>&ndash;&gt;
+          <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;
+      </parent>-->
 
-  <groupId>com.zja</groupId>
-  <artifactId>springcloud-test-root</artifactId>
-  <version>1.0-SNAPSHOT</version>
+    <groupId>com.zja</groupId>
+    <artifactId>springcloud-test-root</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
-  <modules>
-    <module>cloud-config</module>
-    <module>cloud-eureka</module>
-    <module>cloud-gateway</module>
-    <module>cloud-nacos</module>
-    <module>cloud-zookeeper</module>
-    <module>cloud-zuul</module>
-  </modules>
+    <modules>
+        <module>cloud-config</module>
+        <module>cloud-eureka</module>
+        <module>cloud-gateway</module>
+        <module>cloud-nacos</module>
+        <module>cloud-zookeeper</module>
+        <module>cloud-zuul</module>
+    </modules>
 
-  <properties>
-    <!--java版本必须>=1.8-->
-    <java.version>1.8</java.version>
-    <!--maven 版本-->
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.plugin.version>3.6.0</maven.compiler.plugin.version>
-    <maven.clean.plugin.version>3.1.0</maven.clean.plugin.version>
-    <mavne.surefire.plugin.version>2.19.1</mavne.surefire.plugin.version>
-    <!--spring-cloud-->
-    <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
-    <spring-cloud-alibaba-dependencies.version>2.2.3.RELEASE</spring-cloud-alibaba-dependencies.version>
-    <!--spring-boot-->
-    <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
-  </properties>
+    <properties>
+<!--
+        &lt;!&ndash;spring-boot&ndash;&gt;
+        <spring-boot-dependencies.version>2.3.12.RELEASE</spring-boot-dependencies.version>
+        &lt;!&ndash;spring-cloud&ndash;&gt;
+        <spring-cloud-dependencies.version>Hoxton.SR12</spring-cloud-dependencies.version>
+        &lt;!&ndash;spring-cloud-alibaba&ndash;&gt;
+        <spring-cloud-alibaba-dependencies.version>2.2.3.RELEASE</spring-cloud-alibaba-dependencies.version>
+-->
 
-  <!--阿里镜像库：加速jar依赖下载-->
-  <repositories>
-    <repository>
-      <id>alimaven</id>
-      <name>aliyun maven</name>
-      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
+        <!--spring-boot-->
+        <spring-boot-dependencies.version>2.5.5</spring-boot-dependencies.version>
+        <!--spring-cloud-->
+        <spring-cloud-dependencies.version>2020.0.4</spring-cloud-dependencies.version>
+        <!--spring-cloud-alibaba-->
+        <spring-cloud-alibaba-dependencies.version>2.2.6.RELEASE</spring-cloud-alibaba-dependencies.version>
 
-  <!--spring-cloud-下载仓库地址-->
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>com.alibaba.cloud</groupId>
-        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-        <version>${spring-cloud-alibaba-dependencies.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>${spring-cloud.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        <version>${lombok.version}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+        <!--java >=1.8-->
+        <java.version>1.8</java.version>
+        <!--maven 版本-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.plugin.version>3.6.0</maven.compiler.plugin.version>
+        <maven.clean.plugin.version>3.1.0</maven.clean.plugin.version>
+        <mavne.surefire.plugin.version>2.19.1</mavne.surefire.plugin.version>
+    </properties>
 
-  <build>
-    <pluginManagement>
-      <plugins>
-        <!--maven的编译插件-->
-        <plugin>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>${maven.compiler.plugin.version}</version>
-          <configuration>
-            <!--开发版本-->
-            <source>${java.version}</source>
-            <!--.class文件版本-->
-            <target>${java.version}</target>
-            <!--打包后的编码-->
-            <encoding>${project.build.sourceEncoding}</encoding>
-          </configuration>
-        </plugin>
-        <!--打包跳过测试-->
-        <plugin>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>${mavne.surefire.plugin.version}</version>
-          <configuration>
-            <skip>true</skip>
-          </configuration>
-        </plugin>
-        <plugin>
-          <artifactId>maven-clean-plugin</artifactId>
-          <version>${maven.clean.plugin.version}</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-  </build>
+    <!--阿里镜像库：加速jar依赖下载-->
+    <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--spring-boot-dependencies-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--spring-cloud-dependencies-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--spring-cloud-alibaba-dependencies-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!--maven的编译插件-->
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.plugin.version}</version>
+                    <configuration>
+                        <!--开发版本-->
+                        <source>${java.version}</source>
+                        <!--.class文件版本-->
+                        <target>${java.version}</target>
+                        <!--打包后的编码-->
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+                <!--打war-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>3.3.2</version>
+                </plugin>
+                <!--打包跳过测试-->
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${mavne.surefire.plugin.version}</version>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${maven.clean.plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
