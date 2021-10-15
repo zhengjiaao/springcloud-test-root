@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>springcloud-test-root</artifactId>
+        <groupId>com.zja</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.zja</groupId>
+    <artifactId>cloud-alibaba</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>alibaba-alicloud-acm</module>
+        <module>alibaba-alicloud-ans</module>
+        <module>alibaba-alicloud-oss</module>
+        <module>alibaba-alicloud-schedulerX</module>
+        <module>alibaba-alicloud-sms</module>
+        <module>alibaba-binder-rocketmq</module>
+        <module>alibaba-stream-rocketmq</module>
+        <module>alibaba-nacos-config</module>
+        <module>alibaba-nacos-discovery</module>
+        <module>alibaba-sentinel</module>
+        <module>alibaba-sentinel-gateway</module>
+        <module>alibaba-sentinel-gateway-zuul</module>
+        <module>alibaba-sentinel-openfeign</module>
+    </modules>
+</project>

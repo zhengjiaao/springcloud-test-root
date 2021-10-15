@@ -18,6 +18,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
+        <module>cloud-alibaba</module>
         <module>cloud-config</module>
         <module>cloud-eureka</module>
         <module>cloud-gateway</module>
@@ -34,6 +35,8 @@
         <spring-cloud-dependencies.version>Hoxton.SR12</spring-cloud-dependencies.version>
         &lt;!&ndash;spring-cloud-alibaba&ndash;&gt;
         <spring-cloud-alibaba-dependencies.version>2.2.3.RELEASE</spring-cloud-alibaba-dependencies.version>
+        &lt;!&ndash;aliyun-spring-boot&ndash;&gt;
+        <aliyun-spring-boot-dependencies.version>1.0.0</aliyun-spring-boot-dependencies.version>
 -->
 
         <!--spring-boot-->
@@ -42,6 +45,8 @@
         <spring-cloud-dependencies.version>2020.0.4</spring-cloud-dependencies.version>
         <!--spring-cloud-alibaba-->
         <spring-cloud-alibaba-dependencies.version>2.2.6.RELEASE</spring-cloud-alibaba-dependencies.version>
+        <!--aliyun-spring-boot-->
+        <aliyun-spring-boot-dependencies.version>1.0.0</aliyun-spring-boot-dependencies.version>
 
         <!--java >=1.8-->
         <java.version>1.8</java.version>
@@ -94,6 +99,14 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!--阿里云服务中使用 Spring Boot Starters-->
+            <!--<dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>aliyun-spring-boot-dependencies</artifactId>
+                <version>${aliyun-spring-boot-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>-->
         </dependencies>
     </dependencyManagement>
 
