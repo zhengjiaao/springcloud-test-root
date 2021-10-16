@@ -19,7 +19,6 @@
         <module>alibaba-alicloud-oss</module>
         <module>alibaba-alicloud-schedulerX</module>
         <module>alibaba-alicloud-sms</module>
-        <module>alibaba-binder-rocketmq</module>
         <module>alibaba-stream-rocketmq</module>
         <module>alibaba-nacos-config</module>
         <module>alibaba-nacos-discovery</module>
