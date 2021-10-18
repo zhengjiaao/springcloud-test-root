@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: nacos-config
+  profiles:
+    active: dev
+  config:
+    name: ${spring.application.name},${spring.application.name}-${spring.profiles.active}
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      config:  # 配置文件格式：${spring.application.name}-${spring.profiles.active}.${file-extension}
+        enabled: true  # true：nacos远程配置生效，false：本地 spring.config.name 配置生效
+        server-addr: 127.0.0.1:8848
+        namespace: nacos_config
+        group: DEFAULT_GROUP
+#        prefix: app-config    # 默认 ${spring.application.name}
+        file-extension: yaml
+        refresh-enabled: true  # 默认 true，自动刷新配置
