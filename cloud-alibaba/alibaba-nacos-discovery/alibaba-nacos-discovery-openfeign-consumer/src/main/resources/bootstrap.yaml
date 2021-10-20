@@ -1,0 +1,19 @@
+server:
+  port: 18003
+spring:
+  application:
+    name: nacos-openfeign-consumer
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: nacos_discovery
+        service: ${spring.application.name}
+
+    loadbalancer:
+      cache:
+        enabled: false
+
+# 服务消费者 : RestTemplate+Ribbon服务调用

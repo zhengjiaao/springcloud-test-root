@@ -1,0 +1,13 @@
+server:
+  port: 18004
+spring:
+  application:
+    name: nacos-openfeign-provider
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: nacos_discovery
+        service: ${spring.application.name}

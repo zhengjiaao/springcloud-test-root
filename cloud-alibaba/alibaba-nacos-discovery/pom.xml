@@ -18,6 +18,9 @@
         <module>alibaba-nacos-discovery-dubbo-consumer</module>
         <module>alibaba-nacos-discovery-dubbo-provider</module>
 
+        <module>alibaba-nacos-discovery-openfeign-consumer</module>
+        <module>alibaba-nacos-discovery-openfeign-provider</module>
+
         <module>alibaba-nacos-discovery-rest-consumer</module>
         <module>alibaba-nacos-discovery-rest-provider</module>
     </modules>
