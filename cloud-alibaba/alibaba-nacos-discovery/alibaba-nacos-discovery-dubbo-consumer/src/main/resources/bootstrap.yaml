@@ -1,0 +1,25 @@
+server:
+  port: 18002
+spring:
+  application:
+    name: nacos-dubbo-consumer
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: nacos_dubbo
+        service: ${spring.application.name}
+
+dubbo:
+  registry:
+    address: spring-cloud://127.0.0.1
+  consumer:
+    check: false
+    timeout: 60000
+  cloud:
+    subscribed-services: nacos-dubbo-provider  # 多个以","分割
+  protocol:
+    name: dubbo
+    port: 4002

@@ -1,0 +1,32 @@
+server:
+  port: 18001
+spring:
+  application:
+    name: nacos-dubbo-provider
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: nacos_dubbo
+        service: ${spring.application.name}
+
+dubbo:
+  registry:
+    # 挂载到 Spring Cloud 注册中心
+    address: spring-cloud://127.0.0.1
+  #    parameters:
+  #      namespace: @nacos.namespace@  # 可选-命名空间
+  scan:
+    base-packages: com.zja
+  protocol:
+    name: dubbo
+    port: -1 # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
+#  provider:
+#    filter: dubboExceptionFilter,-exception  # 自定义过滤器
+  cloud:
+    subscribed-services: nacos-dubbo-provider # 默认值为 "*"(不推荐)，它将订阅所有应用，多个以" , "隔开
+#    registry-type: dubbo-cloud
+#    max-re-subscribe-metadata-times: 1000
+#    re-subscribe-metadata-intervial: 5
