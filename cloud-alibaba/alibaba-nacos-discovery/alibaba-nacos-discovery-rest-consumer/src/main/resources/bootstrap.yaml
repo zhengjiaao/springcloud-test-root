@@ -11,5 +11,5 @@ spring:
         enabled: true
         server-addr: 127.0.0.1:8848
         service: ${spring.application.name} # 默认 ${spring.application.name}
-        namespace: nacos-discovery
+        namespace: nacos_discovery
 
