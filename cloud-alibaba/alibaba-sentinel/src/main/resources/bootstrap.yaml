@@ -1,0 +1,12 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: sentinel
+  cloud:
+    sentinel:
+      enabled: true
+      transport:
+        port: 8070  # 是本地启的端口，与dashboard进行数据交互
+        dashboard: http://127.0.0.1:8088  # 指明了dashboard的地址
+
