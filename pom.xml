@@ -25,6 +25,8 @@
         <module>cloud-nacos</module>
         <module>cloud-zookeeper</module>
         <module>cloud-zuul</module>
+
+        <module>cloud-web-8099</module>
     </modules>
 
     <properties>
