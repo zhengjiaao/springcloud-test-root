@@ -19,12 +19,16 @@
         <module>alibaba-alicloud-oss</module>
         <module>alibaba-alicloud-schedulerX</module>
         <module>alibaba-alicloud-sms</module>
+
         <module>alibaba-stream-rocketmq</module>
+
         <module>alibaba-nacos-config</module>
         <module>alibaba-nacos-discovery</module>
+
         <module>alibaba-sentinel</module>
-        <module>alibaba-sentinel-gateway</module>
+        <module>alibaba-sentinel-gateway-gateway</module>
         <module>alibaba-sentinel-gateway-zuul</module>
+        <module>alibaba-sentinel-nacos</module>
         <module>alibaba-sentinel-openfeign</module>
     </modules>
 </project>

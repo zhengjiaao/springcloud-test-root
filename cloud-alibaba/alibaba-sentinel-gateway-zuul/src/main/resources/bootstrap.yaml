@@ -1,0 +1,36 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: sentinel-zuul
+  cloud:
+    sentinel:
+      enabled: true
+      eager: true  # 默认false，取消控制台懒加载，项目启动即连接Sentinel
+      transport:
+        port: 8071  # 是本地启的端口，与dashboard进行数据交互
+        dashboard: http://127.0.0.1:8088  # 指明了dashboard的地址
+
+#zuul 路由配置
+
+zuul:
+#  strip-prefix: false # 默认true：/api/user->/user false: /api/user->/api/user
+  host:
+    max-total-connections: 1000 # 默认200，目标主机的最大连接数
+    max-per-route-connections: 200 # 默认20，每个主机的初始连接数
+  routes:
+    cloud-web-8099:
+      path: /cloudweb/**
+      url: http://127.0.0.1:8099/  # url 要是以http开头
+    goods: # 自定义：httpbin服务
+      id: goodsId
+      path: /goods/**   # *一级 **多级
+#      serviceId: client-goods
+      url: http://httpbin.org
+#    order: # 自定义：订单服务
+#      id: orderId
+#      path: /order/**
+##      serviceId: client-order
+#      url: http://httpbin.org
+
+# 未完成，后期再说

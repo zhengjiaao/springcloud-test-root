@@ -2,16 +2,12 @@ server:
   port: 8080
 spring:
   application:
-    name: sentinel-openfeign
+    name: sentinel-gateway
   cloud:
     sentinel:
       enabled: true
       eager: true  # 默认false，取消控制台懒加载，项目启动即连接Sentinel
       transport:
-        port: 8070  # 是本地启的端口，与dashboard进行数据交互
+        port: 8071  # 是本地启的端口，与dashboard进行数据交互
         dashboard: http://127.0.0.1:8088  # 指明了dashboard的地址
 
-#对Feign的支持
-feign:
-  sentinel:
-    enabled: true # 添加feign对sentinel的支持
