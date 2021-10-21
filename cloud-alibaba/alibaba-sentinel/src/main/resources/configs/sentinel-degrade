@@ -1,0 +1,19 @@
+[
+  {
+    // 资源名
+    "resource": "/test1",
+    "limitApp": "default",
+    // 熔断策略（0:慢调用比例，1:异常比率，2:异常计数）
+    "grade": 0,
+    // 最大RT、比例阈值、异常数
+    "count": 200,
+    // 慢调用比例阈值，仅慢调用比例模式有效（1.8.0 引入）
+    "slowRatioThreshold": 0.2,
+    // 最小请求数
+    "minRequestAmount": 5,
+    // 当单位统计时长(类中默认1000)
+    "statIntervalMs": 1000,
+    // 熔断时长
+    "timeWindow": 10
+  }
+]

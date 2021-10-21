@@ -1,0 +1,48 @@
+[
+  {
+    // 资源名
+    "resource": "/test1",
+    // 限流模式（QPS 模式，不可更改）
+    "grade": 1,
+    // 参数索引
+    "paramIdx": 0,
+    // 单机阈值
+    "count": 13,
+    // 统计窗口时长
+    "durationInSec": 6,
+    // 是否集群 默认false
+    "clusterMode": false,
+    //
+    "burstCount": 0,
+    // 集群模式配置
+    "clusterConfig": {
+      //
+      "fallbackToLocalWhenFail": true,
+      //
+      "flowId": 2,
+      //
+      "sampleCount": 10,
+      //
+      "thresholdType": 0,
+      //
+      "windowIntervalMs": 1000
+    },
+    // 流控效果（支持快速失败和匀速排队模式）
+    "controlBehavior": 0,
+    //
+    "limitApp": "default",
+    //
+    "maxQueueingTimeMs": 0,
+    // 高级选项
+    "paramFlowItemList": [
+      {
+        // 参数类型
+        "classType": "int",
+        // 限流阈值
+        "count": 222,
+        // 参数值
+        "object": "2"
+      }
+    ]
+  }
+]

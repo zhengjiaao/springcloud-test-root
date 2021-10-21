@@ -1,0 +1,14 @@
+[
+  {
+    // RT
+    "avgRt": 1,
+    // CPU 使用率
+    "highestCpuUsage": -1,
+    // LOAD
+    "highestSystemLoad": -1,
+    // 线程数
+    "maxThread": -1,
+    // 入口 QPS
+    "qps": -1
+  }
+]

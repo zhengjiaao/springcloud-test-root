@@ -1,0 +1,10 @@
+[
+  {
+    // 资源名
+    "resource": "sentinel_spring_web_context",
+    // 流控应用
+    "limitApp": "/test",
+    // 授权类型(0代表白名单；1代表黑名单。)
+    "strategy": 0
+  }
+]
