@@ -14,8 +14,11 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>cloud-zookeeper-config</module>
+
         <module>zookeeper-openfeign-hystix-consumer</module>
         <module>zookeeper-openfeign-hystix-provider</module>
+
         <module>zookeeper-service</module>
         <module>zookeeper-web</module>
     </modules>

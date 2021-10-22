@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: cloud-zookeeper-config
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    zookeeper:
+      enabled: true # 默认true
+      connect-string: 127.0.0.1:2182
+      config:
+        enabled: true # 默认 true
+        root: config # 默认 config
+        profile-separator: , # 默认 , 配置文件分隔符
+        fail-fast: true  # 默认true 快速失败
+        name: ${spring.application.name} # 默认 ${spring.application.name}
+        default-context: application # 默认 application，上下文

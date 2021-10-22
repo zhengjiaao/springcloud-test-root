@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: alibaba-stream-rocketmq
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: 127.0.0.1:9876   # RocketMQ Server的名称服务器
+          access-key:     # 阿里云账号的AccessKey
+          secret-key:     # 阿里云账号SecretKey
+          enable-msg-trace: true  # 为所有生产者和消费者启用消息跟踪功能
+          customized-trace-topic: RMQ_SYS_TRACE_TOPIC  # 消息跟踪的跟踪主题
+      bindings:
+        output:
+          destination: test-topic
+          group: test-group

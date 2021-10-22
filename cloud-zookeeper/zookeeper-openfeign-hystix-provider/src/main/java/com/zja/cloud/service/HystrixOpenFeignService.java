@@ -1,12 +1,8 @@
 package com.zja.cloud.service;
 
-import cn.hutool.core.util.IdUtil;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.concurrent.TimeUnit;
@@ -57,7 +53,7 @@ public class HystrixOpenFeignService {
         if (id < 0) {
             throw new RuntimeException("******id 不能负数");
         }
-        String serialNumber = IdUtil.simpleUUID();
+        String serialNumber = String.valueOf(System.currentTimeMillis());
 
         return Thread.currentThread().getName() + "\t" + "调用成功，流水号: " + serialNumber;
     }

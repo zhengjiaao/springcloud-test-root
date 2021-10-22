@@ -3,10 +3,7 @@ package com.zja.controller;
 import com.zja.service.ServiceOpenFeign;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -30,8 +27,8 @@ public class HelloController {
     @Autowired
     private ServiceOpenFeign serviceOpenFeign;
 
-    @GetMapping("v2/hello")
-    public Object get(@RequestParam String name) {
+    @GetMapping("v2/hello/{name}")
+    public Object get(@PathVariable("name") String name) {
         //第一种方式：RestTemplate调用
         /*RestTemplate restTemplate = new RestTemplate();
         String forObject = restTemplate.getForObject("http://localhost:8762/v1/hello?name=" + name, String.class);
@@ -50,8 +47,8 @@ public class HelloController {
         return forObject;
     }
 
-    @GetMapping("v3/hello")
-    public String gethello(@RequestParam String name) {
+    @GetMapping("v3/hello/{name}")
+    public String gethello(@PathVariable("name") String name) {
         String hello = serviceOpenFeign.hello(name);
         System.out.println("OpenFeign响应结果: "+hello);
         return hello;

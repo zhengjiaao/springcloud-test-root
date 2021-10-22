@@ -1,4 +1,10 @@
 # cloud-eureka  服务注册和发现     
+
+- [eureka-server](eureka-server/src/main/java/com/zja) 启动 Eureka服务
+- [eureka-service](eureka-service/src/main/java/com/zja) 服务注册者
+- [eureka-web](eureka-web/src/main/java/com/zja) 服务消费者
+
+
 > 主 pom.xml     
 ```xml
     <modules>

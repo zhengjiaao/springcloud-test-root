@@ -18,6 +18,12 @@
     </properties>
 
     <dependencies>
+        <!--优先加载 bootstrap.yaml-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+
         <!--springboot web-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

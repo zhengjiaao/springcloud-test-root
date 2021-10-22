@@ -1,5 +1,7 @@
 # cloud-zookeeper  服务注册和发现    
 
+> 由于升级框架版本，springboot-->2.5.5 、springcloud-->2020.0.4 以上，所以建议zookeeper服务端版本下载安装3.5.x [zookeeper.apache.org](https://zookeeper.apache.org/releases.html)以上
+
 cloud-zookeeper 
 > 主pom.xml  
 ```xml

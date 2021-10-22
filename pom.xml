@@ -20,6 +20,7 @@
     <modules>
         <module>cloud-alibaba</module>
         <module>cloud-config</module>
+        <module>cloud-dubbo</module>
         <module>cloud-eureka</module>
         <module>cloud-gateway</module>
         <module>cloud-nacos</module>

@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: stream-rocketmq
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: 127.0.0.1:9876
+          enable-msg-trace: true  # 默认true，启用消息跟踪
+      bindings:
+        # 相当于topic
+        output:
+          destination: zhengja_msg
+          group: zhengja_msg_group_001
+        input: #订阅 相当于topic
+          destination: zhengja_msg
+          group: lisi-group-consumer_9527

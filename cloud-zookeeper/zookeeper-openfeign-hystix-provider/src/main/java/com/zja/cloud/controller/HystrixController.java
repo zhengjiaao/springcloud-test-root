@@ -1,13 +1,10 @@
 package com.zja.cloud.controller;
 
 import com.zja.cloud.service.HystrixOpenFeignService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.annotation.Resource;
 
 /**
  * Company: 上海数慧系统技术有限公司
@@ -18,7 +15,6 @@ import javax.annotation.Resource;
  * Desc：
  */
 @RestController
-@Slf4j
 public class HystrixController {
 
     @Autowired
