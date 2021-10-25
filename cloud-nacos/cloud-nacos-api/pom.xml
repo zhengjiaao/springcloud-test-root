@@ -9,7 +9,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.zja</groupId>
-    <artifactId>nacos-dubbo-api</artifactId>
+    <artifactId>cloud-nacos-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 

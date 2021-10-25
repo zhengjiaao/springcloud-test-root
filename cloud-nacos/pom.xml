@@ -14,9 +14,10 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>nacos-config</module>
-		<module>nacos-provider</module>
-		<module>nacos-consumer</module>
-		<module>nacos-dubbo-api</module>
+		<module>cloud-nacos-config</module>
+
+		<module>cloud-nacos-api</module>
+		<module>cloud-nacos-dubbo-consumer</module>
+		<module>cloud-nacos-dubbo-provider</module>
 	</modules>
 </project>
