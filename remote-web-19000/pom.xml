@@ -9,14 +9,21 @@
 	</parent>
 
 	<groupId>com.zja</groupId>
-	<artifactId>cloud-web-8099</artifactId>
+	<artifactId>remote-web-19000</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cloud-web-8099</name>
+	<name>remote-web-19000</name>
 
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -33,22 +40,4 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-
 </project>

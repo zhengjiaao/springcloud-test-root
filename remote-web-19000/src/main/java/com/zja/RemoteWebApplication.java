@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CloudWebApplication {
+public class RemoteWebApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CloudWebApplication.class, args);
+		SpringApplication.run(RemoteWebApplication.class, args);
 	}
 
 }
