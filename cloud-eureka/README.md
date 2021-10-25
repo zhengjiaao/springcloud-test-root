@@ -1,16 +1,16 @@
 # cloud-eureka  服务注册和发现     
 
-- [eureka-server](eureka-server/src/main/java/com/zja) 启动 Eureka服务
-- [eureka-service](eureka-service/src/main/java/com/zja) 服务注册者
-- [eureka-web](eureka-web/src/main/java/com/zja) 服务消费者
+- [eureka-server](cloud-eureka-server/src/main/java/com/zja) 启动 Eureka服务
+- [eureka-service](cloud-eureka-service/src/main/java/com/zja) 服务注册者
+- [eureka-web](cloud-eureka-web/src/main/java/com/zja) 服务消费者
 
 
 > 主 pom.xml     
 ```xml
     <modules>
-        <module>eureka-server</module>
-        <module>eureka-service</module>
-        <module>eureka-web</module>
+        <module>cloud-eureka-server</module>
+        <module>cloud-eureka-service</module>
+        <module>cloud-eureka-web</module>
     </modules>
 
     <dependencyManagement>
@@ -27,10 +27,10 @@
     </dependencyManagement>
 ```
 
-## eureka-server 服务注册中心     
+## cloud-eureka-server 服务注册中心     
 > pom.xml   
 ```xml
-    <!--eureka-server 注册中心(相当于zookerper)-->
+    <!--cloud-eureka-server 注册中心(相当于zookerper)-->
     <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>

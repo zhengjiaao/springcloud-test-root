@@ -14,9 +14,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>eureka-server</module>
-        <module>eureka-service</module>
-        <module>eureka-web</module>
+        <module>cloud-eureka-server</module>
+        <module>cloud-eureka-service</module>
+        <module>cloud-eureka-web</module>
     </modules>
 
 </project>
