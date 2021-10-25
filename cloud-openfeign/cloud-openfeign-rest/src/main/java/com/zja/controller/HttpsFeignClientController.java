@@ -11,11 +11,10 @@ package com.zja.controller;
 import com.zja.feign.HttpsFeignClient;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -31,9 +30,19 @@ public class HttpsFeignClientController {
     @Autowired
     private HttpsFeignClient httpsFeignClient;
 
-    @ApiOperation("aliyun 搜索-https 示例")
-    @GetMapping("/get/https/github/search")
-    public Object get(@ApiParam(value = "搜索内容", defaultValue = "docker") @RequestParam("q") String q) {
-        return httpsFeignClient.getSearch(q);
+    //get
+
+    @GetMapping(value = "/get")
+    @ApiOperation(value = "get-无参数", notes = "返回字符串")
+    public Object get() {
+        return httpsFeignClient.get();
     }
+
+    @GetMapping(value = "/get/{path}")
+    @ApiOperation(value = "get-路径参数")
+    public Object getPath1(@PathVariable("path") String path) {
+        return httpsFeignClient.getPath1(path);
+    }
+
+
 }

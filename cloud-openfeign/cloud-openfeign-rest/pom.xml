@@ -24,6 +24,16 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-httpclient</artifactId>
+        </dependency>
+
+        <!--<dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>-->
+
 
         <!-- Spring Boot dependencies -->
         <dependency>
@@ -67,6 +77,7 @@
             <version>1.2.78</version>
             <scope>compile</scope>
         </dependency>
+
     </dependencies>
 
 </project>
