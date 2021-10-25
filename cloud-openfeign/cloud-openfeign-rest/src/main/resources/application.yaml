@@ -1,0 +1,38 @@
+server:
+  port: 18000
+spring:
+  application:
+    name: cloud-openfeign-rest
+  servlet:
+    multipart:
+      max-request-size: 5121MB  # 设置总上传数据总大小 5G
+      max-file-size: 2049MB # 设置单文件大小 2G
+
+feign:
+  httpclient:
+    enabled: true  # 默认true
+    follow-redirects: true        # 跟随重定向
+    connection-timer-repeat: 3000 # 连接定时器重复 默认3秒
+    connection-timeout: 2000      # 连接超时 默认2秒
+    disable-ssl-validation: false # 禁用 SSL 验证，默认fasle
+    max-connections: 200          # 最大连接数 200
+    max-connections-per-route: 50 # 每条路由的最大连接数 默认50
+    time-to-live: 900 # 生存时间 默认 900
+  okhttp:
+    enabled: false # okhttp性能更好
+  circuitbreaker:
+    enabled: false # 断路由，默认fasle
+  compression:
+    request:
+      enabled: false  # 请求参数是否压缩 默认fasle
+      mime-types: text/xml, application/xml, application/json # 支持压缩类型
+      min-request-size: 2048  # 最小请求大小
+    response:
+      enabled: false  # 返回数据是否压缩 默认 false
+      useGzipDecoder: false  # 使用 Gzip 解码器 默认 false
+  autoconfiguration:
+    jackson:
+      enabled: false # 默认 false
+
+
+# http://localhost:18000/swagger-ui/index.html#/
