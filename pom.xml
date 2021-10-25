@@ -24,10 +24,11 @@
         <module>cloud-eureka</module>
         <module>cloud-gateway</module>
         <module>cloud-nacos</module>
+        <module>cloud-openfeign</module>
         <module>cloud-zookeeper</module>
         <module>cloud-zuul</module>
 
-        <module>cloud-web-8099</module>
+        <module>remote-web-19000</module>
     </modules>
 
     <properties>
