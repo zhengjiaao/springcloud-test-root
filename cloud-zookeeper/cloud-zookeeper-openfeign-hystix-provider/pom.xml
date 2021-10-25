@@ -9,7 +9,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.zja</groupId>
-    <artifactId>zookeeper-openfeign-hystix-provider</artifactId>
+    <artifactId>cloud-zookeeper-openfeign-hystix-provider</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
 

@@ -14,13 +14,11 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>cloud-zookeeper-config</module>
+        <!--zookeeper 作为配置中心（实现分布式共享配置）-->
+        <!--<module>cloud-zookeeper-config</module>-->
 
-        <module>zookeeper-openfeign-hystix-consumer</module>
-        <module>zookeeper-openfeign-hystix-provider</module>
-
-        <module>zookeeper-service</module>
-        <module>zookeeper-web</module>
+        <module>cloud-zookeeper-openfeign-hystix-consumer</module>
+        <module>cloud-zookeeper-openfeign-hystix-provider</module>
     </modules>
 
 </project>
