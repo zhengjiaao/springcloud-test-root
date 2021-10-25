@@ -14,8 +14,9 @@
     <packaging>pom</packaging>
 
     <modules>
-<!--        <module>zuul</module>-->
-        <module>zuul-web-a</module>
-        <module>zuul-web-b</module>
+        <module>cloud-zuul-example</module>
+        <module>cloud-zuul-web-a</module>
+        <module>cloud-zuul-web-b</module>
     </modules>
+
 </project>
