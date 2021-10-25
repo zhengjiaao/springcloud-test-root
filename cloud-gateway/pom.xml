@@ -14,9 +14,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>gateway</module>
-        <module>gateway-web-a</module>
-        <module>gateway-web-b</module>
+        <module>cloud-gateway-example</module>
+        <module>cloud-gateway-web-a</module>
+        <module>cloud-gateway-web-b</module>
     </modules>
 
 </project>
