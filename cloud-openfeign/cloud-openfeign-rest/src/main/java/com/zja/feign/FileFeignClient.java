@@ -8,11 +8,13 @@
  */
 package com.zja.feign;
 
+import feign.Response;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
@@ -24,6 +26,8 @@ import org.springframework.web.multipart.MultipartFile;
 @Component
 @FeignClient(name = "remote-web-file", url = "http://127.0.0.1:19000")
 public interface FileFeignClient {
+
+    //文件上传
 
     /**
      * consume为： MULTIPART_FORM_DATA_VALUE，表明只接收FormData这个类型的数据
@@ -62,4 +66,16 @@ public interface FileFeignClient {
     @ApiOperation(value = "post-上传多文件和字符串", notes = "返回 true")
     Object postFile(@RequestPart(value = "files") MultipartFile[] files,
                     @ApiParam("对象") @RequestPart("jsondata") UserDTO userDTO);
+
+
+    //文件下载
+
+    @GetMapping(value = "get/download/v1")
+    @ApiOperation(value = "下载文件-文件URL")
+    String downloadfileURL(@ApiParam(value = "filename", defaultValue = "3840x2160.jpg") @RequestParam("filename") String filename);
+
+    @GetMapping(value = "get/download/v2")
+    @ApiOperation(value = "下载文件-文件流")
+    Response downloadfileStream(@ApiParam(value = "filename", defaultValue = "3840x2160.jpg") @RequestParam("filename") String filename);
+
 }
