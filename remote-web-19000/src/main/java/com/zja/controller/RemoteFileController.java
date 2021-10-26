@@ -16,6 +16,11 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import java.io.*;
+import java.net.URLEncoder;
+
 /**
  * http://localhost:19000/swagger-ui/index.html#/
  * https://localhost:19001/swagger-ui/index.html#/
@@ -24,6 +29,8 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping
 public class RemoteFileController {
+
+    //上传文件
 
     @PostMapping(value = "/post/upload/v1")
     @ApiOperation(value = "post-上传单文件", notes = "返回 true")
@@ -91,4 +98,50 @@ public class RemoteFileController {
         System.out.println(userDTO.toString());
         return true;
     }
+
+
+    //下载文件
+
+    @GetMapping(value = "get/download/v1")
+    @ApiOperation(value = "下载文件-文件URL")
+    public String downloadfile(@ApiParam(value = "filename", defaultValue = "3840x2160.jpg") @RequestParam String filename) {
+        String url = "http://127.0.0.1:19000/public/file/" + filename;
+        return url;
+    }
+
+    @GetMapping(value = "get/download/v2")
+    @ApiOperation(value = "下载文件-文件流")
+    public void downloadfile(HttpServletResponse response,
+                             @ApiParam(value = "filename", defaultValue = "3840x2160.jpg") @RequestParam String filename) throws IOException {
+        String basePath = "D:\\picture";
+        String filePath = basePath + File.separator + filename;
+
+        File file = new File(filePath);
+        if (!file.exists()) {
+            throw new FileNotFoundException("不存在文件：" + filePath);
+        }
+
+        byte[] bytes = toByteArray(new FileInputStream(file));
+        response.setContentType("application/force-download");
+        response.addHeader("Content-Disposition", "attachment;filename=" +
+                URLEncoder.encode(filename, "UTF-8"));
+        response.setContentLength(bytes.length);
+        ServletOutputStream outputStream = response.getOutputStream();
+        outputStream.write(bytes);
+        outputStream.close();
+    }
+
+    /**
+     * InputStream 转换成byte[]
+     */
+    private static byte[] toByteArray(InputStream input) throws IOException {
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        byte[] buffer = new byte[1024 * 4];
+        int n = 0;
+        while (-1 != (n = input.read(buffer))) {
+            output.write(buffer, 0, n);
+        }
+        return output.toByteArray();
+    }
+
 }
