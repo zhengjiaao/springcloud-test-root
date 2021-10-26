@@ -19,6 +19,7 @@
 
     <modules>
         <module>cloud-alibaba</module>
+<!--        <module>cloud-commons</module>-->
         <module>cloud-config</module>
         <module>cloud-dubbo</module>
         <module>cloud-eureka</module>
