@@ -25,6 +25,7 @@
         <module>cloud-gateway</module>
         <module>cloud-nacos</module>
         <module>cloud-openfeign</module>
+        <module>cloud-stream</module>
         <module>cloud-zookeeper</module>
         <module>cloud-zuul</module>
 
