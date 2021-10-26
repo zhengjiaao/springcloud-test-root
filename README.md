@@ -9,11 +9,27 @@
 
 ## springcloud 全家桶(组件)示例
 
+> 以下是已经完成的示例模块
+
+- [cloud-alibaba 全家桶](cloud-alibaba) 
+    - [alibaba-nacos-config 配置管理](./cloud-alibaba/alibaba-nacos-config)
+    - [alibaba-nacos-discovery 服务管理](./cloud-alibaba/alibaba-nacos-discovery)
+    - [alibaba-sentinel 限流降级](./cloud-alibaba/alibaba-sentinel)
+    - [alibaba-sentinel-gateway-gateway 网关管理](./cloud-alibaba/alibaba-sentinel-gateway-gateway)
+    - [alibaba-sentinel-gateway-zuul 网关管理](./cloud-alibaba/alibaba-sentinel-gateway-zuul)
+    - [alibaba-sentinel-nacos 持久化配置](./cloud-alibaba/alibaba-sentinel-nacos)
+    - [alibaba-sentinel-openfeign 限流和降级示例](./cloud-alibaba/alibaba-sentinel-openfeign)
+    - [alibaba-stream-rocketmq 消息中间件](./cloud-alibaba/alibaba-stream-rocketmq)
 - [cloud-config 配置管理](cloud-config) 
+- [cloud-dubbo  RPC服务调用](cloud-dubbo) 
 - [cloud-eureka 服务管理](cloud-eureka)   
 - [cloud-gateway API网关](cloud-gateway)    
 - [cloud-nacos 配置和服务管理](cloud-nacos)      
-- [cloud-zookeeper 服务管理](cloud-zookeeper)     
+- [cloud-openfeign REST远程调用](cloud-openfeign)      
+- [cloud-stream 消息中间件](cloud-stream)      
+- [cloud-zookeeper 配置和服务管理](cloud-zookeeper)     
+- [cloud-zuul API网关](cloud-zuul)     
+- [remote-web-19000 REST服务提供者](remote-web-19000)     
 
 
 ## springboot、spring cloud、spring-cloud-alibaba 版本对应
@@ -101,4 +117,18 @@
 | 分布式配置中心      | SpringCloud-Config  | 搭建复杂，无可视化配置页面   | nacos   |   |  |
 | 熔断降级           | Hystrix  |   进入维护状态      | 	Sentinel  | 可视化配置，上手更简单  |  |
 
+
+## 适配的中间件版本
+
+> 以下是你可能会用到的中间件
+
+|                    | 官网文档 | github  | 使用版本下载  | 详细  |  推荐  |
+| ----------------- | ---------- | ---------- | ---------- | ---------- | ---------- | 
+| nacos            | [nacos.io/zh-cn](https://nacos.io/zh-cn/)          | [github.com/alibaba/nacos](https://github.com/alibaba/nacos) | [nacos-1.4.2](https://github.com/alibaba/nacos/releases/tag/1.4.2)  |   |  |
+| zookeeper        | [zookeeper.apache.org](http://zookeeper.apache.org/releases.html)    |  | [zookeeper-3.6.3-bin.tar.gz](https://www.apache.org/dyn/closer.lua/zookeeper/zookeeper-3.6.3/apache-zookeeper-3.6.3-bin.tar.gz)  |   |  |
+| Sentinel         | [Sentinel-github](https://github.com/alibaba/Sentinel) | [github.com/alibaba/Sentinel](https://github.com/alibaba/Sentinel) | [sentinel-dashboard-1.8.2.jar](https://github.com/alibaba/Sentinel/releases)  |   |  |
+| rabbitmq         | [www.rabbitmq.com](https://www.rabbitmq.com/)      | [github.com/rabbitmq](https://github.com/rabbitmq) | [rabbitmq-3.9.8](https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.9.8)  |   |  |
+| kafka            | [kafka.apache.org](http://kafka.apache.org/)       |  | [kafka_2.13-3.0.0.tgz](http://kafka.apache.org/downloads)  |   |  |
+| rocketmq         | [rocketmq.apache.org](http://rocketmq.apache.org/) | [github.com/apache/rocketmq](https://github.com/apache/rocketmq) | [rocketmq-4.9.1](https://www.apache.org/dyn/closer.cgi?path=rocketmq/4.9.1/rocketmq-all-4.9.1-source-release.zip)  |   |  |
+| Git              | [git-scm.com](https://git-scm.com/)       |           | [git-latest](https://git-scm.com/downloads)  |   |  |
 
