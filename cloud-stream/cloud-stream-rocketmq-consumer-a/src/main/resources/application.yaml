@@ -1,0 +1,21 @@
+# output: 相当于生产者producer，它是从队列中发送消息的
+# input:  相当于消费者consumer，它是从队列中接收消息的
+
+server:
+  port: 18001
+
+spring:
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: 127.0.0.1:9876
+      default-binder: rocketmq
+      bindings:
+        #使用系统默认的两个管道 input
+        input:
+          auto-startup: true  # 启动 消费者， 默认true
+          destination: order.exchange
+          group: order.queue  # rocketmq一定要设置group（随便写） 其他的mq可留空
+          consumer:
+            concurrency: 3

@@ -1,0 +1,45 @@
+# spring.cloud.stream.bindings.[output].destination:         交换机的名称
+# spring.cloud.stream.bindings.[output].group:               组，用于生成队列，组名相同时可以实现分布式
+# spring.cloud.stream.bindings.[input].destination:          交换机的名称
+# spring.cloud.stream.bindings.[input].group:                组，用于生成队列，组名相同时可以实现分布式
+# spring.cloud.stream.bindings.[input].consumer.concurrency: 消费者的并发量
+# spring.rabbitmq.addresses:                                 服务器地址
+# spring.rabbitmq.username:                                  账号
+# spring.rabbitmq.password:                                  密码
+# spring.rabbitmq.virtual-host:                              虚拟主机
+
+
+# output: 相当于生产者producer，它是从队列中发送消息的
+# input:  相当于消费者consumer，它是从队列中接收消息的
+
+server:
+  port: 18000
+
+spring:
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: 127.0.0.1:9876
+      default-binder: rocketmq
+      bindings:
+        # 注意：消费者和生产者的使用方式与之前有变化：采用名称-out-数字的方式，用于生产者，名称-in-数字的方式用于消费者
+        sms-out-0:
+          destination: sms-topic
+          content-type: application/json
+        sms-in-0:
+          destination: sms-topic
+          content-type: text/plain
+          group: sms-group
+
+        #使用系统默认的两个管道output、input
+        output:
+          auto-startup: true  # 启动 生成者， 默认true
+          destination: order.exchange
+          group: order.queue  # rocketmq一定要设置group（随便写） 其他的mq可留空
+        input:
+          auto-startup: true  # 启动 消费者， 默认true
+          destination: order.exchange
+          group: order.queue  # rocketmq一定要设置group（随便写） 其他的mq可留空
+          consumer:
+            concurrency: 3
