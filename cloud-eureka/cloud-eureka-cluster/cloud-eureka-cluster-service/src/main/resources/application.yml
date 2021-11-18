@@ -1,0 +1,14 @@
+server:
+  port: 18003   #端口号
+
+spring:
+  application:
+    name: eureka-service  # 服务名称
+
+eureka:
+#  instance:
+#    prefer-ip-address: true # 可选的，默认 fasle，首选 IP 地址进行注册
+  client:
+    service-url:
+      # 服务注册中心的地址
+      defaultZone: http://localhost:16001/eureka/,http://localhost:16002/eureka/,http://localhost:16003/eureka/

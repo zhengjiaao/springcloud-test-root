@@ -1,0 +1,23 @@
+server:
+  port: 16002
+
+spring:
+  application:
+    name: eureka-server-${server.port}
+
+# eureka-server 注册中心服务端地址
+eureka:
+  #  instance:
+  #    hostname:  # 指定 Eureka主机(域名 或 ip)
+  #服务端配置
+  server:
+    enable-self-preservation: true # 默认true，启用自我保护机制：自我保护开启时续约、续订功能关闭
+  #客户端配置
+  client:
+    registerWithEureka: true  # 默认true，关闭自我注册，默认情况下，服务中心也会作为客户端来自己注册自己
+    fetchRegistry: true       # 默认true，当前主机是否从Eureka Server 下载服务注册表, 由于注册中心的职责就是维护服务实例，它并不需要去检索服务，不需要立即向eureka服务注册
+    serviceUrl:
+      # eureka-server 注册中心服务端地址
+      defaultZone: http://localhost:16001/eureka/,http://localhost:16002/eureka/,http://localhost:16003/eureka/
+
+# 访问：http://localhost:16002
