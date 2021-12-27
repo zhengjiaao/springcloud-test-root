@@ -1,0 +1,35 @@
+server:
+  port: 18002
+
+spring:
+  application:
+    name: task-ram  # 会转为 task name
+  cloud:
+    task:
+      # 自定义任务名称， 默认 spring.application.name
+#      name: task-jpa-name
+      # 限制同一个时刻只能有一个同名任务执行
+      single-instance-enabled: true
+
+  #数据库配置
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/task_jpa
+    username: task_jpa
+    password: pass
+    driverClassName: com.mysql.cj.jdbc.Driver
+  #集成jpa
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  #集成batch
+  batch:
+    jdbc:
+      initialize-schema: always # 始终初始化数据源
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          task: DEBUG

@@ -1,0 +1,22 @@
+server:
+  port: 18001
+
+spring:
+  application:
+    name: task-ram  # 会转为 task name
+  cloud:
+    task:
+      #task 可选的配置
+      name: task-ram-name # 自定义任务名称， 默认 spring.application.name
+      single-instance-enabled: false # 默认false，单实例启用，true时当第一个任务执行正在运行时，任何其他时间您尝试运行具有相同任务名称,该任务都会失败
+      initialize-enabled: false   # 默认false，初始化时启用
+      closecontextEnabled: false  # 默认false，true则关闭上下文已启用
+      autoconfiguration:
+        enabled: true  #默认true，false将禁用 Spring Cloud 任务自动配置
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          task: DEBUG
