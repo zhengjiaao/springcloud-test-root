@@ -21,12 +21,14 @@
         <module>cloud-alibaba</module>
 <!--        <module>cloud-commons</module>-->
         <module>cloud-config</module>
+        <module>cloud-consul</module>
         <module>cloud-dubbo</module>
         <module>cloud-eureka</module>
         <module>cloud-gateway</module>
         <module>cloud-nacos</module>
         <module>cloud-openfeign</module>
         <module>cloud-stream</module>
+        <module>cloud-task</module>
         <module>cloud-zookeeper</module>
         <module>cloud-zuul</module>
 
