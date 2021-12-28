@@ -1,0 +1,10 @@
+server:
+  servlet:
+    session:
+      timeout: 60s # session 会话过期
+
+spring:
+  security:
+    user:
+      name: user     # 默 user
+      password: pass # 默 空 自动生成随机密码

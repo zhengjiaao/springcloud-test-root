@@ -26,6 +26,7 @@
         <module>cloud-eureka</module>
         <module>cloud-gateway</module>
         <module>cloud-nacos</module>
+        <module>cloud-security</module>
         <module>cloud-openfeign</module>
         <module>cloud-stream</module>
         <module>cloud-task</module>
