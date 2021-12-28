@@ -1,0 +1,37 @@
+# consul 使用动态配置，必须在bootstrap.yml中配置好动态配置项目的配置
+server:
+  port: 8080
+
+spring:
+  application:
+    name: consul-service
+  profiles:
+    active: dev
+  cloud:
+    consul:
+      enabled: true     # 默 true
+      host: localhost   # 默 localhost
+      port: 8500        # 默 8500
+      config:
+        enabled: true   # 默 true
+#        name: ${spring.application.name}  # 默 空 ，替换 spring.application.name 用于查找配置
+        defaultContext: application
+        format: YAML    # 配置的文件格式：参考 Format
+        data-key: data  # 默 data 文件名字
+#        prefixes:
+#          - config    # 默 config 前缀
+        watch:
+          enabled: true   # 默 true 监视配置的改变
+          delay: 1000     # 默 1000 延迟
+          wait-time: 55   # 默 55
+
+# ${prefix}/${spring.application.name},${active.profile}/${data-key} # 私有配置
+# ${prefix}/${spring.application.name}/${data-key} # 私有配置
+# ${prefix}/${defaultContext},${active.profile}/${data-key}  # 共享配置
+# ${prefix}/${defaultContext}}/${data-key} # 共享配置
+
+# 示例：
+# config/provider-demo,dev/data
+# config/provider-demo/data
+# config/application,dev/data
+# config/application/data
