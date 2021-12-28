@@ -1,7 +1,10 @@
 server:
   servlet:
     session:
-      timeout: 60s # session 会话过期
+      timeout: 60s  # session 会话过期
+      cookie:
+        http-only: true # 默 false , true 浏览器脚本将无法访问cookie
+        secure: true    # 默 false , true 则cookie将仅通过HTTPS连接发送
 
 spring:
   security:
