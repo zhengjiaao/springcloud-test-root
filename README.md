@@ -135,4 +135,5 @@
 | kafka            | [kafka.apache.org](http://kafka.apache.org/)       |  | [kafka_2.13-3.0.0.tgz](http://kafka.apache.org/downloads)  |   |  |
 | rocketmq         | [rocketmq.apache.org](http://rocketmq.apache.org/) | [github.com/apache/rocketmq](https://github.com/apache/rocketmq) | [rocketmq-4.9.1](https://www.apache.org/dyn/closer.cgi?path=rocketmq/4.9.1/rocketmq-all-4.9.1-source-release.zip)  |   |  |
 | Git              | [git-scm.com](https://git-scm.com/)       |           | [git-latest](https://git-scm.com/downloads)  |   |  |
+| consul           | [www.consul.io](https://www.consul.io/)       |           | [downloads-consul-1.11.1](https://www.consul.io/downloads)  |   |  |
 
