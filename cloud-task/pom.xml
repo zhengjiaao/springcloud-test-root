@@ -14,7 +14,7 @@
     <packaging>pom</packaging>
 
     <modules>
-<!--        <module>cloud-task-db-jdbc</module>-->
+        <module>cloud-task-db-jdbc</module>
         <module>cloud-task-db-jpa</module>
         <module>cloud-task-ram</module>
     </modules>
