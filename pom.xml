@@ -109,13 +109,13 @@
                 <scope>import</scope>
             </dependency>
             <!--阿里云服务中使用 Spring Boot Starters-->
-            <!--<dependency>
+            <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>aliyun-spring-boot-dependencies</artifactId>
                 <version>${aliyun-spring-boot-dependencies.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>-->
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
