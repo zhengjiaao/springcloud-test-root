@@ -1,0 +1,19 @@
+#alibaba:
+#  cloud:
+#    access-key:   # 不可泄漏，一般推荐使用阿里云的 RAM用户
+#    secret-key:
+#    oss:
+#      endpoint: oss-cn-shanghai.aliyuncs.com   # bucket-demo-1
+#      sts:
+#        access-key:
+#        secret-key:
+#        security-token:
+#      config:
+#      authorization-mode: AK_SK
+
+# 自定义配置
+alibaba:
+  oss:
+    endpoint: oss-cn-shanghai.aliyuncs.com      # 站点，需要自己申请
+    access-key: LTAI8tMMHfCKRrxYPvDjv5RN        # 访问密钥ID ，请填写自己的，不可泄漏，一般推荐使用阿里云的 RAM用户
+    secret-key: 62aqMKbiwvrv8GG72ia6oqUTJkt4Pw  # 访问密钥   ，请填写自己的
