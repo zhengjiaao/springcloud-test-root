@@ -1,0 +1,11 @@
+spring:
+  # 参考配置类 SchedulerxProperties.java
+  schedulerx2:
+    endpoint: addr-sh-internal.edas.aliyun.com
+    namespace: 9f54744a-c2b5-436f-aa49-78f77e4c584e
+    groupId: app-test
+    # 1.2.1及以上版本设置appKey
+    appKey: app-test
+    # 1.2.1以下版本设置AK/SK
+#    aliyunAccessKey:
+#    aliyunSecretKey:
