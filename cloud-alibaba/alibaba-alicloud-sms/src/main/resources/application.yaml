@@ -1,0 +1,10 @@
+alibaba:
+  cloud:
+    #示例 请填写自己的访问密钥
+    access-key: LTAI8tMMHfCKRrxYPvDjv5RN
+    secret-key: 62aqMKbiwvrv8GG72ia6oqUTJkt4Pw
+    sms:
+      report-queue-name:
+      up-queue-name:
+      connect-timeout: 10000
+      read-timeout: 10000

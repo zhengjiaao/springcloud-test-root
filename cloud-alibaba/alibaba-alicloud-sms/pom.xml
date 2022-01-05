@@ -14,9 +14,18 @@
     <packaging>jar</packaging>
 
     <dependencies>
+        <!--阿里短信服务 原生 java-sdk-->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+            <version>4.5.30</version>
+        </dependency>
+
+        <!--阿里短信服务 java-sdk-->
         <!--<dependency>
             <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alicloud-sms</artifactId>
+            <artifactId>aliyun-sms-spring-boot-starter</artifactId>
+            <version>1.0.0</version>
         </dependency>-->
 
         <dependency>
