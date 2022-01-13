@@ -9,9 +9,6 @@
 package com.zja.server.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
@@ -22,10 +19,10 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
  *
  * 先将授权服务器变成资源服务器作测试
  */
-//@Deprecated
-@EnableResourceServer  // springboot2.4后可能弃用 拥有 WebSecurityConfigurerAdapter 相关能力
-@Configuration
-@Order(3) // ResourceServerConfig 是比 WebSecurityConfig 优先级低
+@Deprecated
+//@EnableResourceServer  // springboot2.4后可能弃用 拥有 WebSecurityConfigurerAdapter 相关能力
+//@Configuration
+//@Order(3) // ResourceServerConfig 是比 WebSecurityConfig 优先级低
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Autowired
