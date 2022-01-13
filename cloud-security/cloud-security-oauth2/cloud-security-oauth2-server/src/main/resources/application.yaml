@@ -1,0 +1,27 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: oauth2-server
+    version: 1.0
+  #    security:
+  #      user:
+  #        name: user     # 默 user
+  #        password: pass # 默 空 自动生成随机密码
+  thymeleaf:
+    prefix: classpath:/templates/
+
+
+# 配置第三方系统平台地址
+platform:
+  oa:
+    url: http://localhost:8081/oa/profile
+  qq:
+    url: http://localhost:8082/qq/profile
+
+logging:
+  level:
+    org.springframework.security: DEBUG

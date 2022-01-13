@@ -1,0 +1,28 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /qq  # 一定要配置，不能配置为 /
+
+spring:
+  application:
+    name: qq application
+    version: 1.0
+
+security:
+  oauth2:
+    client: # 表示 是一个OAuth2客户端，用户获取token
+      client-id: qq_client
+      client-secret: qq_secret
+      access-token-uri: http://localhost:8080/oauth/token
+      user-authorization-uri: http://localhost:8080/oauth/authorize
+    resource:
+      jwt:
+        key-uri: http://localhost:8080/oauth/token_key # 用于获取 tokenKey，进行全面解析 token
+
+oa:
+  profile-uri: http://localhost:8081/oa/profile
+
+
+logging:
+  level:
+    org.springframework.security: DEBUG
