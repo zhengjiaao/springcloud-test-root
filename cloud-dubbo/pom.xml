@@ -19,9 +19,13 @@
         <module>cloud-dubbo-nacos-consumer</module>
         <module>cloud-dubbo-nacos-provider</module>
 
-        <!--失败-->
+        <!-- 失败 sprincloud dubbo 不支持 zookeeper ，使用alibaba-dubbo-->
         <!--<module>cloud-dubbo-zookeeper-consumer</module>
         <module>cloud-dubbo-zookeeper-provider</module>-->
+
+        <!--<module>cloud-dubbo3-api</module>
+        <module>cloud-dubbo3-consumer</module>
+        <module>cloud-dubbo3-provider</module>-->
     </modules>
 
 </project>
