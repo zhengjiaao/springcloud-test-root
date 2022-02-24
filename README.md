@@ -11,7 +11,7 @@
 
 > 以下是已经完成的示例模块
 
-- [cloud-alibaba 全家桶](cloud-alibaba) 
+- [cloud-alibaba 全家桶](./cloud-alibaba) 
     - [alibaba-alicloud-oss 对象存储](./cloud-alibaba/alibaba-alicloud-oss)
     - [alibaba-alicloud-sms 短信服务](./cloud-alibaba/alibaba-alicloud-sms)
     - [alibaba-nacos-config 配置管理](./cloud-alibaba/alibaba-nacos-config)
@@ -22,20 +22,24 @@
     - [alibaba-sentinel-nacos 持久化配置](./cloud-alibaba/alibaba-sentinel-nacos)
     - [alibaba-sentinel-openfeign 限流和降级示例](./cloud-alibaba/alibaba-sentinel-openfeign)
     - [alibaba-stream-rocketmq 消息中间件](./cloud-alibaba/alibaba-stream-rocketmq)
-- [cloud-config 配置管理](cloud-config) 
-- [cloud-dubbo  RPC服务调用](cloud-dubbo) 
-- [cloud-eureka 服务管理](cloud-eureka)   
-- [cloud-gateway API网关](cloud-gateway)    
-- [cloud-nacos 配置和服务管理](cloud-nacos)      
-- [cloud-openfeign REST远程调用](cloud-openfeign)    
+- [cloud-config 配置管理](./cloud-config) 
+- [cloud-consul 配置和服务管理](./cloud-consul) 
+- [cloud-dubbo  RPC服务调用](./cloud-dubbo) 
+- [cloud-eureka 服务管理](./cloud-eureka)   
+    - [cloud-eureka-cluster 集群服务管理](./cloud-eureka/cloud-eureka-cluster) 
+    - [cloud-eureka-server 单节点服务管理](./cloud-eureka/cloud-eureka-server) 
+- [cloud-gateway API网关](./cloud-gateway)    
+- [cloud-nacos 配置和服务管理](./cloud-nacos)    
+- [cloud-openfeign REST远程调用](./cloud-openfeign)    
     - [cloud-openfeign-eureka](./cloud-openfeign/cloud-openfeign-eureka)  
     - [cloud-openfeign-nacos](./cloud-openfeign/cloud-openfeign-nacos)  
     - [cloud-openfeign-rest](./cloud-openfeign/cloud-openfeign-rest)  
     - [cloud-openfeign-zookeeper](./cloud-openfeign/cloud-openfeign-zookeeper)  
-- [cloud-stream 消息中间件](cloud-stream)      
-- [cloud-zookeeper 配置和服务管理](cloud-zookeeper)     
-- [cloud-zuul API网关](cloud-zuul)     
-- [remote-web-19000 REST服务提供者](remote-web-19000)     
+- [cloud-stream 消息中间件](./cloud-stream)      
+- [cloud-task 短运行期微服务的任务](./cloud-task)      
+- [cloud-zookeeper 配置和服务管理](./cloud-zookeeper)     
+- [cloud-zuul API网关](./cloud-zuul)     
+- [remote-web-19000 REST服务提供者](./remote-web-19000)     
 
 
 ## springboot、spring cloud、spring-cloud-alibaba 版本对应
