@@ -12,6 +12,8 @@
 > 以下是已经完成的示例模块
 
 - [cloud-alibaba 全家桶](cloud-alibaba) 
+    - [alibaba-alicloud-oss 对象存储](./cloud-alibaba/alibaba-alicloud-oss)
+    - [alibaba-alicloud-sms 短信服务](./cloud-alibaba/alibaba-alicloud-sms)
     - [alibaba-nacos-config 配置管理](./cloud-alibaba/alibaba-nacos-config)
     - [alibaba-nacos-discovery 服务管理](./cloud-alibaba/alibaba-nacos-discovery)
     - [alibaba-sentinel 限流降级](./cloud-alibaba/alibaba-sentinel)
