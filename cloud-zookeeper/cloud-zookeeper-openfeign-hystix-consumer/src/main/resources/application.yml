@@ -19,10 +19,11 @@ feign:
     enabled: false # feign 默认使用 httpclint
   okhttp:
     enabled: true  # feign可以用okhttp代替传统的httpclient，性能更好
-  client:
-    config:
-      connectTimeout: 5000  # 指定Feign客户端连接提供者的超时时限   取决于网络环境
-      readTimeout: 5000     # 指定Feign客户端从请求到获取到提供者给出的响应的超时时限  取决于业务逻辑运算时间
+  # 2.5.x client.config 配置会报错
+#  client:
+#    config:
+#      connectTimeout: 5000  # 指定Feign客户端连接提供者的超时时限   取决于网络环境
+#      readTimeout: 5000     # 指定Feign客户端从请求到获取到提供者给出的响应的超时时限  取决于业务逻辑运算时间
   #   loggerLevel: FULL    # 全局默认请求打印日志级别：NONE、BASIC、HEADERS、FULL
   compression:
     request:
