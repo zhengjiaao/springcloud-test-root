@@ -24,7 +24,7 @@ import org.springframework.web.multipart.MultipartFile;
  * feign 常用 file 测试
  */
 @Component
-@FeignClient(name = "remote-web-file", url = "http://127.0.0.1:19000")
+@FeignClient(name = "remote-web-file", contextId = "filefeign-client", url = "http://127.0.0.1:19000")
 public interface FileFeignClient {
 
     //文件上传

@@ -9,6 +9,16 @@ spring:
       max-file-size: 2049MB # 设置单文件大小 2G
 
 feign:
+  client:
+    default-config: default
+    refresh-enabled: false
+    config:
+      default:
+        connectTimeout: 2000  # 默 1s，连接超时 2s
+        readTimeout: 5000     # 默 1s，读取超时 5s
+      filefeign-client:
+        connectTimeout: 2000  # 默 1s，连接超时 2s
+        readTimeout: 180000   # 默 1s，读取超时 180s 大文件处理可能会出现读取超时
   httpclient:
     enabled: true  # 默认true
     follow-redirects: true        # 跟随重定向
