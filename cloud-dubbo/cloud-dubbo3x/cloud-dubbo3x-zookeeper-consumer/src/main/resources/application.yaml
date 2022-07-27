@@ -1,0 +1,29 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /consumer
+spring:
+  application:
+    name: zookeeper-dubbo-consumer
+  main:
+    allow-bean-definition-overriding: true
+
+dubbo:
+  application:
+    name: ${spring.application.name}
+  scan:
+    base-packages: com.zja.dubbo.zookeeper.consumer
+  # 下面是可选配置
+  registry:
+    address: zookeeper://127.0.0.1:2182?registry-type=service    # 默 spring-cloud://localhost:9090 注册地址
+    file: ${user.home}/dubbo-cache/${spring.application.name}/dubbo.cache
+  consumer:
+    check: false    # 默 true 服务提供者校验
+    timeout: 1000   # 默 1000毫秒(1秒) 远程调用超时时间（毫秒）
+  protocol:         # 指定某一种协议 protocols 支持多种协议
+    name: dubbo     # 默 dubbo 协议名称 常见：Dubbo、RMI、Hessain、WebService、Http
+    port: 4002      # 默 20880 dubbo绑定端口 当为 -1 则随机绑定未被占用端口
+
+demo:
+  service:
+    version: 1.0.0

@@ -1,0 +1,39 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: nacos-dubbo-provider
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        enabled: true                         # 默 true 启动 nacos-discovery
+        register-enabled: true                # 默 true 启动注册服务
+        server-addr: 127.0.0.1:8848           # 默 本机ip
+        namespace: public                     # 默 public 命名空间
+        service: ${spring.application.name}   # 默 ${spring.application.name} 服务名称
+        group: DEFAULT_GROUP                  # 默 DEFAULT_GROUP 分组
+
+dubbo:
+  application:
+    name: ${spring.application.name}
+  scan:
+    base-packages: com.zja.dubbo.nacos.provider
+  registry:
+    address: nacos://127.0.0.1:8848 # 默 空 必填项 注册地址
+    parameters:
+      namespace: public  # 默 public 命名空间 此配置优先级大于 ${spring.nacos.discovery.namespace}
+    #显示在nacos配置列表中 参考：https://github.com/apache/dubbo/issues/7116
+#    use-as-metadata-center: false   # 默 true，地址是否作为远程元数据中心
+#    use-as-config-center: false     # 默 true，地址是否作为配置中心
+  protocol:
+    name: dubbo
+    port: -1      # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
+#  provider:
+#    filter: dubboExceptionFilter,-exception  # 自定义过滤器
+
+
+demo:
+  service:
+    version: 1.0.0

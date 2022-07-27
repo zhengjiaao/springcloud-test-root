@@ -1,0 +1,39 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: nacos-dubbo-provider
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        enabled: true                         # 默 true 启动 nacos-discovery
+        register-enabled: true                # 默 true 启动注册服务
+        server-addr: 127.0.0.1:8848           # 默 本机ip
+        namespace: public                     # 默 public 命名空间
+        service: ${spring.application.name}   # 默 ${spring.application.name} 服务名称
+        group: DEFAULT_GROUP                  # 默 DEFAULT_GROUP 分组
+
+dubbo:
+  scan:
+    base-packages: com.zja.dubbo.nacos.provider
+# 下面是可选配置
+#  registry:
+#    address: spring-cloud://localhost:9090 # 默 spring-cloud://localhost:9090 注册地址
+#    parameters:
+#      namespace: public  # 默 public 命名空间
+#  protocol:
+#    name: dubbo
+#    port: -1 # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
+#  provider:
+#    filter: dubboExceptionFilter,-exception  # 自定义过滤器
+  cloud:
+    subscribed-services: nacos-dubbo-provider # 默 * (不推荐)，订阅DUBBO服务，它将订阅所有应用，多个以" , "隔开
+    registry-type: dubbo-cloud                # 默 dubbo-cloud  注册类型 分未：dubbo-cloud  or spring-cloud
+    max-re-subscribe-metadata-times: 1000     # 默 1000 最大重新订阅元数据时间(毫秒)
+    re-subscribe-metadata-intervial: 5        # 默 5 重新订阅元数据间隔
+
+demo:
+  service:
+    version: 1.0.0

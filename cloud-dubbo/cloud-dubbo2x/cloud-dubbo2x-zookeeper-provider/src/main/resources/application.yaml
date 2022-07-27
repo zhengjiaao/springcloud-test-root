@@ -1,0 +1,31 @@
+#server:
+#  port: 18080
+#spring:
+#  application:
+#    name: dubbo-zookeeper-provider
+#  main:
+#    allow-bean-definition-overriding: true
+#  cloud:
+#    zookeeper:
+#      enabled: true # 默认true
+#      connect-string: 127.0.0.1:2182
+#      discovery:
+#        enabled: true  # 默认true ，false：禁用 Zookeeper Discovery Client
+#        register: true  # 默认true
+#
+#dubbo:
+#  registry:
+#    #    address: spring-cloud://127.0.0.1
+#    file: N/A
+#    address: zookeeper://127.0.0.1:2181
+#  # 挂载到 Spring Cloud 注册中心
+#  scan:
+#    base-packages: com.zja
+#  protocol:
+#    name: dubbo
+#    port: -1 # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
+#  #  cloud:
+#  #    subscribed-services: dubbo-zookeeper-provider # 服务提供方的服务名
+#  #  provider:
+#  #    filter: dubboExceptionFilter,-exception  # 自定义过滤器
+#

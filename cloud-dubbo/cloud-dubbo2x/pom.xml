@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.zja</groupId>
+        <artifactId>cloud-dubbo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.zja</groupId>
+    <artifactId>cloud-dubbo2x</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>cloud-dubbo2x-api</module>
+        <module>cloud-dubbo2x-na-consumer</module>
+        <module>cloud-dubbo2x-na-provider</module>
+        <module>cloud-dubbo2x-nacos-consumer</module>
+        <module>cloud-dubbo2x-nacos-provider</module>
+        <module>cloud-dubbo2x-zookeeper-consumer</module>
+        <module>cloud-dubbo2x-zookeeper-provider</module>
+    </modules>
+
+    <properties>
+        <dubbo.version>2.7.8</dubbo.version>
+        <!--注意，需要大于1.4.x 小于 2.x-->
+        <nacos.version>1.4.2</nacos.version>
+        <!--注意，需要大于3.6.0-->
+        <zookeeper.version>3.6.3</zookeeper.version>
+    </properties>
+
+    <!--不推荐引入，这会引起与springboot版本不匹配，导致启动报错-->
+    <!--错误：找不到类 org.springframework.core.metrics.ApplicationStartup-->
+    <!--<dependencyManagement>
+        <dependencies>
+            &lt;!&ndash; Apache Dubbo  &ndash;&gt;
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-dependencies-bom</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>-->
+
+</project>

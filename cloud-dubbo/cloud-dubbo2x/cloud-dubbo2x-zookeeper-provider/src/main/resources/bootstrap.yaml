@@ -1,0 +1,26 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: zookeeper-dubbo-provider
+  main:
+    allow-bean-definition-overriding: true
+
+dubbo:
+  application:
+    name: ${spring.application.name}
+    metadata-type: composite          # 默 local, 元数据类型
+  scan:
+    base-packages: com.zja.dubbo.zookeeper.provider
+  registry:
+    address: zookeeper://127.0.0.1:2182?registry-type=service  # 默 空 必填项 注册地址
+  protocol:
+    name: dubbo
+    port: -1      # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
+#  provider:
+#    filter: dubboExceptionFilter,-exception  # 自定义过滤器
+
+
+demo:
+  service:
+    version: 1.0.0

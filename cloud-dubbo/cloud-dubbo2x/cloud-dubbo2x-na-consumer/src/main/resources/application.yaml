@@ -1,0 +1,22 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /consumer
+spring:
+  application:
+    name: consumer
+  main:
+    allow-bean-definition-overriding: true
+
+dubbo:
+  registry:
+    register: false # 默true，服务注册
+  protocol:
+    name: dubbo
+    port: 4002
+  consumer:
+    check: false
+    timeout: 60000
+#  cloud:
+#    subscribed-services: nacos-dubbo-provider  # 多个以","分割
+

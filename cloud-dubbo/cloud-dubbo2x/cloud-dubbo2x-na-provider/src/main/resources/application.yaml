@@ -1,0 +1,16 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: provider
+  main:
+    allow-bean-definition-overriding: true
+
+dubbo:
+  scan:
+    base-packages: com.zja.dubbo.provider  # 最好加上，防止偶尔扫描不到
+  registry:
+    address: N/A
+  protocol:
+    name: dubbo
+    port: 12345
