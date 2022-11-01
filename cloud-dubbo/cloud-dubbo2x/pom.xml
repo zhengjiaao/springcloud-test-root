@@ -18,6 +18,9 @@
         <module>cloud-dubbo2x-na-provider</module>
         <module>cloud-dubbo2x-nacos-consumer</module>
         <module>cloud-dubbo2x-nacos-provider</module>
+
+        <module>cloud-dubbo2x-nacos-apache-consumer</module>
+        <module>cloud-dubbo2x-nacos-apache-provider</module>
         <module>cloud-dubbo2x-zookeeper-consumer</module>
         <module>cloud-dubbo2x-zookeeper-provider</module>
     </modules>
