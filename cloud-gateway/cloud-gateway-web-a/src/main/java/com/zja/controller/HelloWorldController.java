@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloWorldController {
 
+    /**
+     * http://localhost:18001/v1/hello
+     */
     @GetMapping("v1/hello")
     public String hello() {
         return "hello-a";
