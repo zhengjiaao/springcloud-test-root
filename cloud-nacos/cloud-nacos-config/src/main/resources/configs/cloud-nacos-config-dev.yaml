@@ -1,6 +1,6 @@
 attributes:
   # 单个值
-  config: nacos-config-dev.yaml
+  config: cloud-nacos-config-dev.yaml
   # list
   list:
     - 1
