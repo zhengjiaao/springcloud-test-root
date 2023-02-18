@@ -14,5 +14,5 @@ spring:
         server-addr: @nacos.host@:@nacos.port@
         namespace: @nacos.namespace@
         group: @nacos.group@
+        prefix: ${spring.application.name}
         file-extension: @nacos.file_extension@
-
