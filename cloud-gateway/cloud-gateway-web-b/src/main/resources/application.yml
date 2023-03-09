@@ -1,7 +1,5 @@
 server:
   port: 18002
-  servlet:
-    context-path: /b
 spring:
   application:
     name: gateway-web-b

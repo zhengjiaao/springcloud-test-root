@@ -20,11 +20,11 @@ spring:
 #        - id: time_route
 #          uri: http://127.0.0.1:18001
 #          predicates:  # Predicate（谓词）
-#            - After=2020-11-01T06:06:06+08:00[Asia/Shanghai]  # 设置只有在2020年11月02日才会转发到 uri 网站
+#            - After=2020-11-01T06:06:06+08:00[Asia/Shanghai]  # 设置只有在2020年11月02日才会转发到我的网站
 ##            - Between=2018-01-20T06:06:06+08:00[Asia/Shanghai], 2019-01-20T06:06:06+08:00[Asia/Shanghai]  # 时间范围内能转发 after_route
 
 # 命令行输入:
-# curl http://localhost:18000/a/v1/hello
+# curl http://localhost:18000/v1/hello
 
       # 通过cokkie匹配
 #      routes:
@@ -34,7 +34,7 @@ spring:
 #            - Cookie=ityouknow,kee.e
 
 # 命令行输入:
-# curl http://localhost:18000/a/v1/hello --cookie "ityouknow=kee.e"
+# curl http://localhost:18000/v1/hello --cookie "ityouknow=kee.e"
 
       # 通过 header 匹配
 #      routes:
@@ -44,7 +44,7 @@ spring:
 #            - Header=X-Request-Id, \d+
 
 # 命令行输入:
-# curl http://localhost:18000/a/v1/hello  -H "X-Request-Id:666666"
+# curl http://localhost:18000/v1/hello  -H "X-Request-Id:666666"
 
       # 通过 Host 匹配
 #      routes:
@@ -54,8 +54,8 @@ spring:
 #            - Host=**.ityouknow.com
 
 # 命令行输入:
-# curl http://localhost:18000/a/v1/hello  -H "Host: www.ityouknow.com"
-# curl http://localhost:18000/a/v1/hello  -H "Host: md.ityouknow.com"
+# curl http://localhost:18000/v1/hello  -H "Host: www.ityouknow.com"
+# curl http://localhost:18000/v1/hello  -H "Host: md.ityouknow.com"
 
       # 通过请求方式匹配
 #      routes:
@@ -65,9 +65,9 @@ spring:
 #            - Method=GET   # 通过是 POST、GET、PUT、DELETE 等不同的请求方式来进行路由
 
 # curl 默认是以 GET 的方式去请求
-#  curl http://localhost:18000/a/v1/hello
+#  curl http://localhost:18000/v1/hello
 # curl 默认是以 GET 的方式去请求
-#  curl -X POST http://localhost:18000/a/v1/hello
+#  curl -X POST http://localhost:18000/v1/hello
 
       # 通过请求路径匹配
 #      routes:
@@ -77,7 +77,7 @@ spring:
 #            - Path=/v1/{segment}   # Path Route Predicate 接收一个匹配路径的参数来判断是否走路由
 
 #命令行输入:
-#  curl http://localhost:18000/a/v1/hello  # 通过
+#  curl http://localhost:18000/v1/hello  # 通过
 #  curl http://localhost:18000/v1/xx   # 不通过
 #  curl http://localhost:18000/boo/xx  # 不通过
 
@@ -90,8 +90,8 @@ spring:
 #            - Query=keep, pu. # 当请求中包含 keep 属性并且参数值是以 pu 开头的长度为三位的字符串才会进行匹配和路由
 
 # 命令行输入:
-#  curl http://localhost:18000/a/v1/hello?smile=x
-#  curl http://localhost:18000/a/v1/hello?keep=pub
+#  curl http://localhost:18000/v1/hello?smile=x
+#  curl http://localhost:18000/v1/hello?keep=pub
 
       # 通过请求 ip 地址匹配
 #      routes:
@@ -130,7 +130,7 @@ spring:
 #            - Method=GET
 
 # 命令行输入:
-#  curl http://localhost:18000/a/v1/hello
+#  curl http://localhost:18000/v1/hello
 
       # 自定义转发路由 根据不同版本的访问路径转发到不同版本的微服务上
 #      routes:
@@ -152,17 +152,17 @@ spring:
 #            - Path=/**  # 使用通配符匹配
 
 # 命令行输入:
-#  curl http://localhost:18000/a/v1/hello
+#  curl http://localhost:18000/v1/hello
 
       # 路由配置的两种形式-路由到指定的URL(精确匹配，配置具体的接口路径即可)
 #      routes:
 #        - id: test_route  # 唯一标识，通常使用服务id
-#          uri: http://127.0.0.1:18001/a/v1/hello  # path
+#          uri: http://127.0.0.1:18001/v1/hello  # path
 #          predicates:
-#            - Path=/a/v1/hello  # 指定具体的路径进行匹配
+#            - Path=/v1/hello  # 指定具体的路径进行匹配
 
 # 命令行输入:
-#  curl http://localhost:18000/a/v1/hello
+#  curl http://localhost:18000/v1/hello
 
 
       # 路由配置的两种形式-路由到指定的微服务(通配，使用通配符/**进行匹配)
@@ -173,17 +173,17 @@ spring:
 #            - Path=/**  # 使用通配符匹配
 
 # 命令行输入:
-#  curl http://localhost:18000/a/v1/hello
+#  curl http://localhost:18000/v1/hello
 
       # 路由配置的两种形式-路由到指定的微服务(精确匹配，配置具体的接口路径即可)
 #      routes:
 #        - id: gateway-web-a  # 唯一标识，通常使用服务id
-#          uri: lb://gateway-web-a/a/v1/hello  # path
+#          uri: lb://gateway-web-a/v1/hello  # path
 #          predicates:
 #            - Path=/v1/hello  # 指定具体的路径进行匹配
 
 # 命令行输入:
-#  curl http://localhost:18000/a/v1/hello
+#  curl http://localhost:18000/v1/hello
 
 
       # 自定义路由谓词工厂  如有某个服务限制用户只允许在09:00 - 17:00这个时间段内才可以访问
@@ -192,25 +192,14 @@ spring:
         - id: gateway-web-a  # 唯一标识，通常使用服务id
           uri: lb://gateway-web-a  # 目标URL，lb代表从注册中心获取服务
           predicates:
-            - Path=/a/**
             # 注意名称必须为路由谓词工厂类名的前缀，参数为允许访问的时间段
             - TimeBetween=上午9:30,下午5:00   # 自定义路由谓词工厂  如有某个服务限制用户只允许在09:00 - 17:00这个时间段内才可以访问
           filters:
             # 名称必须为过滤器工厂类名的前缀，并且参数只能有两个，因为NameValueConfig里只定义了两个属性
-            - PreLog=testNameA,testValueA   # 自定义过滤器-记录访问日志
-        - id: gateway-web-b  # 唯一标识，通常使用服务id
-          uri: lb://gateway-web-b  # 目标URL，lb代表从注册中心获取服务
-          predicates:
-            - Path=/b/**
-            # 注意名称必须为路由谓词工厂类名的前缀，参数为允许访问的时间段
-            - TimeBetween=上午9:30,下午5:00   # 自定义路由谓词工厂  如有某个服务限制用户只允许在09:00 - 17:00这个时间段内才可以访问
-          filters:
-            # 名称必须为过滤器工厂类名的前缀，并且参数只能有两个，因为NameValueConfig里只定义了两个属性
-            - PreLog=testNameB,testValueB   # 自定义过滤器-记录访问日志
+            - PreLog=testName,testValue   # 自定义过滤器-记录访问日志
 
 # 命令行输入:
-#  curl http://localhost:18000/a/v1/hello
-#  curl http://localhost:18000/b/v1/hello
+#  curl http://localhost:18000/v1/hello
 
 
 
