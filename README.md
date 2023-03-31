@@ -143,6 +143,7 @@
 |                    | 官网文档 | github  | 使用版本下载  | 详细  |  推荐  |
 | ----------------- | ---------- | ---------- | ---------- | ---------- | ---------- | 
 | nacos            | [nacos.io/zh-cn](https://nacos.io/zh-cn/)          | [github.com/alibaba/nacos](https://github.com/alibaba/nacos) | [nacos-1.4.2](https://github.com/alibaba/nacos/releases/tag/1.4.2)  |   |  |
+| nacos            | [nacos.io/zh-cn](https://nacos.io/zh-cn/)          | [github.com/alibaba/nacos](https://github.com/alibaba/nacos) | [nacos-2.1.0](https://github.com/alibaba/nacos/releases/tag/2.1.0)  | 搭配dubbo3.x  |  |
 | zookeeper        | [zookeeper.apache.org](http://zookeeper.apache.org/releases.html)    |  | [zookeeper-3.6.3-bin.tar.gz](https://www.apache.org/dyn/closer.lua/zookeeper/zookeeper-3.6.3/apache-zookeeper-3.6.3-bin.tar.gz)  |   |  |
 | Sentinel         | [Sentinel-github](https://github.com/alibaba/Sentinel) | [github.com/alibaba/Sentinel](https://github.com/alibaba/Sentinel) | [sentinel-dashboard-1.8.2.jar](https://github.com/alibaba/Sentinel/releases)  |   |  |
 | rabbitmq         | [www.rabbitmq.com](https://www.rabbitmq.com/)      | [github.com/rabbitmq](https://github.com/rabbitmq) | [rabbitmq-3.9.8](https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.9.8)  |   |  |
