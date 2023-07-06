@@ -152,3 +152,11 @@
 | Git              | [git-scm.com](https://git-scm.com/)       |           | [git-latest](https://git-scm.com/downloads)  |   |  |
 | consul           | [www.consul.io](https://www.consul.io/)       |           | [downloads-consul-1.11.1](https://www.consul.io/downloads)  |   |  |
 
+## 本地运行环境搭建
+
+> 以下是你可能会用到的中间件
+
+|       | 官网文档                                                                              | github  | 使用版本下载                                                                       | 详细  | 是否必须安装 |
+|-------|-----------------------------------------------------------------------------------| ---------- |------------------------------------------------------------------------------| ---------- |--------| 
+| java  | [www.oracle.com/java8](https://www.oracle.com/java/technologies/downloads/#java8) |  | [java8 downloads](https://www.oracle.com/java/technologies/downloads/#java8) |   | **必须** |
+| maven | [maven.apache.org](https://maven.apache.org/)                                     |  | [maven3.6.2 downloads](https://maven.apache.org/download.cgi)                |   | **必须** |
