@@ -7,7 +7,7 @@
 * [Spring Cloud Alibaba 官网](https://spring.io/projects/spring-cloud-alibaba)
 
 
-## springcloud 全家桶(组件)示例
+## spring-cloud 全家桶(组件)示例
 
 > 以下是已经完成的示例模块
 
@@ -50,7 +50,7 @@
 - [remote-web-19000 REST服务提供者](./remote-web-19000)     
 
 
-## springboot、spring cloud、spring-cloud-alibaba 版本对应
+## springboot、spring-cloud、spring-cloud-alibaba 版本对应
 **Release Train**
 
 | spring-cloud Release Train                                   | spring-boot Version                          |                spring-cloud-alibaba  Version         |
@@ -123,7 +123,7 @@
 </dependencies>
 ```
 
-## spring cloud、spring-cloud-alibaba 区别
+## spring-cloud、spring-cloud-alibaba 区别
 
 |                    | spring cloud 组件 | 详细  | spring-cloud-alibaba 组件  | 详细  |  推荐  |
 | ----------------- | ---------- | ---------- | ---------- | ---------- | ---------- | 
@@ -134,6 +134,8 @@
 | 短信平台           | 无  |               | Alibaba Cloud  SMS  |   |  |
 | 分布式配置中心      | SpringCloud-Config  | 搭建复杂，无可视化配置页面   | nacos   |   |  |
 | 熔断降级           | Hystrix  |   进入维护状态      | 	Sentinel  | 可视化配置，上手更简单  |  |
+
+总结：若项目中使用了**spring-cloud-alibaba 组件**，那么，推荐项目上，所有组统一使用**spring-cloud-alibaba 组件**.
 
 
 ## 适配的中间件版本
