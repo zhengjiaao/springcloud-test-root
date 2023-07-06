@@ -1,0 +1,35 @@
+# spring.cloud.stream.bindings.[output].destination:         交换机的名称
+# spring.cloud.stream.bindings.[output].group:               组，用于生成队列，组名相同时可以实现分布式
+# spring.cloud.stream.bindings.[input].destination:          交换机的名称
+# spring.cloud.stream.bindings.[input].group:                组，用于生成队列，组名相同时可以实现分布式
+# spring.cloud.stream.bindings.[input].consumer.concurrency: 消费者的并发量
+# spring.rabbitmq.addresses:                                 服务器地址
+# spring.rabbitmq.username:                                  账号
+# spring.rabbitmq.password:                                  密码
+# spring.rabbitmq.virtual-host:                              虚拟主机
+
+
+# output: 相当于生产者producer，它是从队列中发送消息的
+# input:  相当于消费者consumer，它是从队列中接收消息的
+
+# 待参考：https://blog.csdn.net/qq_38206879/article/details/126280764
+spring:
+  rabbitmq:
+    addresses: 127.0.0.1:5672
+    username: guest # 默 guest
+    password: guest # 默 guest
+    virtual-host: /
+  cloud:
+    stream:
+      default-binder: rabbit
+      bindings:
+        # functionName-in-index
+        # 生产-消费者 指向同一个topic
+        log-in-0:
+          group: test-queue
+          destination: test-topic
+          consumer:
+            concurrency: 3
+            # 只处理一次，异常时直接分派到 DLQ，无需重试
+            max-attempts: 1
+

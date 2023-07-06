@@ -2,20 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>springcloud-test-root</artifactId>
+        <artifactId>cloud-stream</artifactId>
         <groupId>com.zja</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.zja</groupId>
-    <artifactId>cloud-stream</artifactId>
+    <artifactId>cloud-stream-kafka</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-<!--        <module>cloud-stream-kafka</module>-->
-<!--        <module>cloud-stream-rabbit</module>-->
-<!--        <module>cloud-stream-rocketmq</module>-->
+        <module>cloud-stream-kafka-sender</module>
+        <module>cloud-stream-kafka-consumer-a</module>
+        <module>cloud-stream-kafka-consumer-b</module>
     </modules>
 </project>
