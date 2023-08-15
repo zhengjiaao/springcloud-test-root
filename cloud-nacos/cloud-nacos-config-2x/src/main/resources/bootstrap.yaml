@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: @profile.active@
+  application:
+    name: cloud-nacos-config
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      config: # ${prefix}-${spring.profiles.active}.${file-extension}
+        server-addr: @nacos.host@:@nacos.port@
+        namespace: @nacos.namespace@
+        group: @nacos.group@
+        prefix: ${spring.application.name}
+        file-extension: @nacos.file_extension@
+        # 开启nacos server 服务端的权限认证
+        username: nacos
+        password: nacos

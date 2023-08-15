@@ -15,6 +15,7 @@
 
 	<modules>
 		<module>cloud-nacos-config</module>
+		<module>cloud-nacos-config-2x</module>
 
 		<module>cloud-nacos-api</module>
 		<module>cloud-nacos-dubbo-consumer</module>
