@@ -1,4 +1,4 @@
-# cloud-nacos-config-2x          
+# cloud-nacos-config-auth          
 
 ## 开启 nacos权限认证
 
