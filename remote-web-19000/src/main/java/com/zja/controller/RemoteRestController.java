@@ -60,6 +60,12 @@ public class RemoteRestController {
         return "get 请求成功: " + path;
     }
 
+    @GetMapping(value = "/get/param/v2")
+    @ApiOperation(value = "get-拼接参数", notes = "对象属性参数，相当于 @RequestParam(required = false) 属性名")
+    public Object getPath3(UserDTO userDTO) {
+        return "get 请求成功: " + userDTO;
+    }
+
     @GetMapping(value = "/get/object/v1")
     @ApiOperation(value = "get-无参数", notes = "返回对象")
     public Object getObject() {
