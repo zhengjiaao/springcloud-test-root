@@ -57,6 +57,10 @@ public interface FileFeignClient {
 //                    @ApiParam("对象") @RequestBody UserDTO userDTO);
                     @ApiParam("对象") @RequestPart("jsondata") UserDTO userDTO);
 
+    @PostMapping(value = "/post/upload/v4", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @ApiOperation(value = "post-上传单文件和字符串", notes = "返回 true")
+    Object postFile(@ApiParam("上传文件") FileUploadRequest uploadRequest);
+
     @PostMapping(value = "/post/upload/v5", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @ApiOperation(value = "post-上传多文件和字符串", notes = "返回 true")
     Object postFile(@RequestPart(value = "files") MultipartFile[] files,

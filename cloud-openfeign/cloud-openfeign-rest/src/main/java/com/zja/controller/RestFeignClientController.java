@@ -48,6 +48,19 @@ public class RestFeignClientController {
         return restFeignClient.getPath2(path);
     }
 
+    @Deprecated // 无法正确接收参数
+    @GetMapping(value = "/get/param/v2")
+    @ApiOperation(value = "get-拼接参数", notes = "对象属性参数，相当于 @RequestParam(required = false) 属性名")
+    public Object getObject(UserDTO userDTO) {
+        return restFeignClient.getParam2(userDTO);
+    }
+
+    @GetMapping(value = "/get/param/v3")
+    @ApiOperation(value = "get-拼接参数", notes = "对象属性参数，相当于 @RequestParam(required = false) 属性名")
+    public Object getObject3(UserDTO userDTO) {
+        return restFeignClient.getParam3(userDTO);
+    }
+
     @GetMapping(value = "/get/object/v1")
     @ApiOperation(value = "get-无参数", notes = "返回对象")
     public Object getObject() {

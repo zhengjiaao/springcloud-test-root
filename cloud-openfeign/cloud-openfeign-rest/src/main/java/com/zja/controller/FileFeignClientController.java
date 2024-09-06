@@ -9,6 +9,7 @@
 package com.zja.controller;
 
 import com.zja.feign.FileFeignClient;
+import com.zja.feign.FileUploadRequest;
 import com.zja.feign.UserDTO;
 import feign.Response;
 import io.swagger.annotations.Api;
@@ -67,6 +68,14 @@ public class FileFeignClientController {
     public Object postFile(@ApiParam("上传文件") @RequestPart(value = "file") MultipartFile file,
                            @ApiParam("对象") @RequestBody UserDTO userDTO) {
         fileFeignClient.postFile(file, userDTO);
+        return true;
+    }
+
+    @PostMapping(value = "/post/upload/v4/2")
+    @ApiOperation(value = "post-上传单文件和json对象", notes = "返回 true")
+    public Object postFileV42(@ApiParam("上传文件") @RequestPart(value = "file") MultipartFile file,
+                           @ApiParam("对象") @RequestBody UserDTO userDTO) {
+        fileFeignClient.postFile(FileUploadRequest.builder().file(file).id(userDTO.getId()).name(userDTO.getName()).date(userDTO.getDate()).build());
         return true;
     }
 

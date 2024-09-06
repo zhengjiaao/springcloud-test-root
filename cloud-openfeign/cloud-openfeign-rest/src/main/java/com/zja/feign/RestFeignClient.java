@@ -11,6 +11,7 @@ package com.zja.feign;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,6 +40,17 @@ public interface RestFeignClient {
     @GetMapping(value = "/get/param/v1")
     @ApiOperation(value = "get-拼接参数")
     String getPath2(@RequestParam("path") String path);
+
+    // 无法接收到参数
+    @Deprecated
+    @GetMapping(value = "/get/param/v2")
+    @ApiOperation(value = "get-对象参数", notes = "返回对象")
+    String getParam2(UserDTO userDto);
+
+    // 使用@SpringQueryMap 可以接收到参数
+    @GetMapping(value = "/get/param/v2")
+    @ApiOperation(value = "get-对象参数", notes = "返回对象")
+    String getParam3(@SpringQueryMap UserDTO userDto);
 
     @GetMapping(value = "/get/object/v1")
     @ApiOperation(value = "get-无参数", notes = "返回对象")
