@@ -48,6 +48,41 @@
 - [cloud-zuul API网关](./cloud-zuul)
 - [remote-web-19000 REST服务提供者](./remote-web-19000)
 
+## 本地运行环境搭建
+
+> 以下是你必须要安装的基础软件,可以使项目正常打包及运行.
+
+|       | 官网文档                                                                              | github | 使用版本下载                                                                       | 详细 | 是否必须安装 |
+|-------|-----------------------------------------------------------------------------------|--------|------------------------------------------------------------------------------|----|--------| 
+| java  | [www.oracle.com/java8](https://www.oracle.com/java/technologies/downloads/#java8) |        | [java8 downloads](https://www.oracle.com/java/technologies/downloads/#java8) |    | **必须** |
+| maven | [maven.apache.org](https://maven.apache.org/)                                     |        | [maven3.6.2 downloads](https://maven.apache.org/download.cgi)                |    | **必须** |
+
+## 适配的中间件版本
+
+> 以下是你可能会用到的中间件
+
+|           | 官网文档                                                              | github                                                             | 使用版本下载                                                                                                                          | 详细         | 推荐 |
+|-----------|-------------------------------------------------------------------|--------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|------------|----| 
+| nacos     | [nacos.io/zh-cn](https://nacos.io/zh-cn/)                         | [github.com/alibaba/nacos](https://github.com/alibaba/nacos)       | [nacos-1.4.2](https://github.com/alibaba/nacos/releases/tag/1.4.2)                                                              |            |    |
+| nacos     | [nacos.io/zh-cn](https://nacos.io/zh-cn/)                         | [github.com/alibaba/nacos](https://github.com/alibaba/nacos)       | [nacos-2.1.0](https://github.com/alibaba/nacos/releases/tag/2.1.0)                                                              | 搭配dubbo3.x |    |
+| zookeeper | [zookeeper.apache.org](http://zookeeper.apache.org/releases.html) |                                                                    | [zookeeper-3.6.3-bin.tar.gz](https://www.apache.org/dyn/closer.lua/zookeeper/zookeeper-3.6.3/apache-zookeeper-3.6.3-bin.tar.gz) |            |    |
+| Sentinel  | [Sentinel-github](https://github.com/alibaba/Sentinel)            | [github.com/alibaba/Sentinel](https://github.com/alibaba/Sentinel) | [sentinel-dashboard-1.8.2.jar](https://github.com/alibaba/Sentinel/releases)                                                    |            |    |
+| rabbitmq  | [www.rabbitmq.com](https://www.rabbitmq.com/)                     | [github.com/rabbitmq](https://github.com/rabbitmq)                 | [rabbitmq-3.9.8](https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.9.8)                                          |            |    |
+| kafka     | [kafka.apache.org](http://kafka.apache.org/)                      |                                                                    | [kafka_2.13-3.0.0.tgz](http://kafka.apache.org/downloads)                                                                       |            |    |
+| rocketmq  | [rocketmq.apache.org](http://rocketmq.apache.org/)                | [github.com/apache/rocketmq](https://github.com/apache/rocketmq)   | [rocketmq-4.9.1](https://www.apache.org/dyn/closer.cgi?path=rocketmq/4.9.1/rocketmq-all-4.9.1-source-release.zip)               |            |    |
+| Git       | [git-scm.com](https://git-scm.com/)                               |                                                                    | [git-latest](https://git-scm.com/downloads)                                                                                     |            |    |
+| consul    | [www.consul.io](https://www.consul.io/)                           |                                                                    | [downloads-consul-1.11.1](https://www.consul.io/downloads)                                                                      |            |    |
+
+
+## 后续计划
+
+> 以下是后续计划预研的技术
+
+|              | 说明                            | 是否完成 | 
+|--------------|-------------------------------|------|
+| cloud-stream | 预研消息中间件kafka、rabbit、rocketmq等 | 计划中  |
+
+
 ## springboot、spring-cloud、spring-cloud-alibaba 版本对应
 
 - 参考地址：https://spring.io/projects/spring-cloud#overview
@@ -142,39 +177,6 @@
 | 熔断降级      | Hystrix            | 进入维护状态           | 	Sentinel                | 可视化配置，上手更简单 |         |
 
 总结：若项目中使用了**spring-cloud-alibaba 组件**，那么，推荐项目上，所有组统一使用**spring-cloud-alibaba 组件**.
-
-## 适配的中间件版本
-
-> 以下是你可能会用到的中间件
-
-|           | 官网文档                                                              | github                                                             | 使用版本下载                                                                                                                          | 详细         | 推荐 |
-|-----------|-------------------------------------------------------------------|--------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|------------|----| 
-| nacos     | [nacos.io/zh-cn](https://nacos.io/zh-cn/)                         | [github.com/alibaba/nacos](https://github.com/alibaba/nacos)       | [nacos-1.4.2](https://github.com/alibaba/nacos/releases/tag/1.4.2)                                                              |            |    |
-| nacos     | [nacos.io/zh-cn](https://nacos.io/zh-cn/)                         | [github.com/alibaba/nacos](https://github.com/alibaba/nacos)       | [nacos-2.1.0](https://github.com/alibaba/nacos/releases/tag/2.1.0)                                                              | 搭配dubbo3.x |    |
-| zookeeper | [zookeeper.apache.org](http://zookeeper.apache.org/releases.html) |                                                                    | [zookeeper-3.6.3-bin.tar.gz](https://www.apache.org/dyn/closer.lua/zookeeper/zookeeper-3.6.3/apache-zookeeper-3.6.3-bin.tar.gz) |            |    |
-| Sentinel  | [Sentinel-github](https://github.com/alibaba/Sentinel)            | [github.com/alibaba/Sentinel](https://github.com/alibaba/Sentinel) | [sentinel-dashboard-1.8.2.jar](https://github.com/alibaba/Sentinel/releases)                                                    |            |    |
-| rabbitmq  | [www.rabbitmq.com](https://www.rabbitmq.com/)                     | [github.com/rabbitmq](https://github.com/rabbitmq)                 | [rabbitmq-3.9.8](https://github.com/rabbitmq/rabbitmq-server/releases/download/v3.9.8)                                          |            |    |
-| kafka     | [kafka.apache.org](http://kafka.apache.org/)                      |                                                                    | [kafka_2.13-3.0.0.tgz](http://kafka.apache.org/downloads)                                                                       |            |    |
-| rocketmq  | [rocketmq.apache.org](http://rocketmq.apache.org/)                | [github.com/apache/rocketmq](https://github.com/apache/rocketmq)   | [rocketmq-4.9.1](https://www.apache.org/dyn/closer.cgi?path=rocketmq/4.9.1/rocketmq-all-4.9.1-source-release.zip)               |            |    |
-| Git       | [git-scm.com](https://git-scm.com/)                               |                                                                    | [git-latest](https://git-scm.com/downloads)                                                                                     |            |    |
-| consul    | [www.consul.io](https://www.consul.io/)                           |                                                                    | [downloads-consul-1.11.1](https://www.consul.io/downloads)                                                                      |            |    |
-
-## 本地运行环境搭建
-
-> 以下是你必须要安装的基础软件,可以使项目正常打包及运行.
-
-|       | 官网文档                                                                              | github | 使用版本下载                                                                       | 详细 | 是否必须安装 |
-|-------|-----------------------------------------------------------------------------------|--------|------------------------------------------------------------------------------|----|--------| 
-| java  | [www.oracle.com/java8](https://www.oracle.com/java/technologies/downloads/#java8) |        | [java8 downloads](https://www.oracle.com/java/technologies/downloads/#java8) |    | **必须** |
-| maven | [maven.apache.org](https://maven.apache.org/)                                     |        | [maven3.6.2 downloads](https://maven.apache.org/download.cgi)                |    | **必须** |
-
-## 后续计划
-
-> 以下是后续计划预研的技术
-
-|              | 说明                            | 是否完成 | 
-|--------------|-------------------------------|------|
-| cloud-stream | 预研消息中间件kafka、rabbit、rocketmq等 | 计划中  |
 
 ## 你还可以学习其他项目
 
