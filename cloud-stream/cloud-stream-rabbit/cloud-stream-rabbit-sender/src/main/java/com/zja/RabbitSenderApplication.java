@@ -6,6 +6,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 /**
+ * <a href="http://localhost:18003/swagger-ui/index.html#/">...</a>
+ *
  * @author: zhengja
  * @since: 2023/07/06 9:58
  */

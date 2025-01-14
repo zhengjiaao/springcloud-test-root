@@ -9,27 +9,42 @@
 # spring.rabbitmq.virtual-host:                              虚拟主机
 
 
-# output: 相当于生产者producer，它是从队列中发送消息的
-# input:  相当于消费者consumer，它是从队列中接收消息的
-
-# 待参考：https://blog.csdn.net/qq_38206879/article/details/126280764
+server:
+  port: 18003
 spring:
   rabbitmq:
-    addresses: 127.0.0.1:5672
-    username: guest # 默 guest
-    password: guest # 默 guest
+    addresses: 192.168.159.145:5672
+    username: admin # 默 guest
+    password: pass # 默 guest
     virtual-host: /
   cloud:
     stream:
       default-binder: rabbit
       bindings:
-        # functionName-in-index
-        # 生产-消费者 指向同一个topic
-        log-in-0:
-          group: test-queue
-          destination: test-topic
-          consumer:
-            concurrency: 3
-            # 只处理一次，异常时直接分派到 DLQ，无需重试
-            max-attempts: 1
-
+        # functionName-in-index:  # channel 消息通道(out是生产者、in是消费者)
+        # 添加 User - Producer
+        addUser-out-0:
+          # 在 RabbitMQ Web UI 中，需手动提前创建
+          destination: add-user-exchange # Exchange or Topic 交换机的名称
+          content-type: application/json # 默 application/json，数据类型，可选地
+          # 在 RabbitMQ Web UI 中，需手动提前创建
+          binder: rabbit # 绑定消息中间件，可选的，默认 spring.cloud.stream.default-binder=
+        # 添加 User - Consumer
+        addUser-int-0:
+          destination: add-user-exchange
+          content-type: application/json
+          # 同一个组内只能被消费一次
+          group: add-user-queue
+        deleteUser-out-0:
+          destination: delete-user-exchange
+          content-type: text/plain
+          group: delete-user-queue
+        deleteUser-int-0:
+          destination: delete-user-exchange
+          content-type: text/plain
+          group: delete-user-queue
+    #          consumer:
+    #            concurrency: 3  # 默认 1，消费者并发数
+    #            max-attempts: 1 # 默认 3，只处理一次，异常时直接分派到 DLQ(死信队列)，无需重试
+    function:
+      definition: addUser;deleteUser

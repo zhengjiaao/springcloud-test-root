@@ -1,0 +1,33 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 2049MB     # 设置单文件大小 2G
+      max-request-size: 5121MB  # 设置总上传数据总大小 5G
+  rabbitmq:
+    address-shuffle-mode: random
+    addresses: 192.168.159.145:5672
+    username: admin
+    password: pass
+    virtual-host: /
+  cloud:
+    stream:
+      default-binder: rabbit
+      bindings:
+        # 绑定消息通道(out是生产者、in是消费者)
+        input:
+          destination: myQueue
+          group: myGroup
+        output:
+          destination: myQueue
+      rabbit:
+        bindings:
+          input:
+            consumer:
+              auto-bind-dlq: true
+              dead-letter-exchange: myDlqExchange
+              dead-letter-routing-key: myDlqRoutingKey

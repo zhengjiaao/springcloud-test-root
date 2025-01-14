@@ -28,7 +28,7 @@
         <module>cloud-nacos</module>
         <module>cloud-security</module>
         <module>cloud-openfeign</module>
-        <module>cloud-stream</module>
+        <!-- <module>cloud-stream</module> -->
         <module>cloud-task</module>
         <module>cloud-zookeeper</module>
         <module>cloud-zuul</module>

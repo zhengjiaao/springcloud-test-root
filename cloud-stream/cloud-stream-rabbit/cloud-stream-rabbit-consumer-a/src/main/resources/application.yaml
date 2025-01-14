@@ -1,0 +1,29 @@
+server:
+  port: 18001
+spring:
+  rabbitmq:
+    addresses: 192.168.159.145:5672
+    username: admin # 默 guest
+    password: pass # 默 guest
+    virtual-host: /
+  cloud:
+    stream:
+      default-binder: rabbit
+      bindings:
+        # functionName-in-index:  # channel 消息通道(out是生产者、in是消费者)
+        loginConsumerEvent-in-0:
+          # Exchange or Topic 交换机的名称，若不填写，则自动创建，并以 loginConsumerEvent-in-0 命名
+          destination: login-exchange
+          # queue 消息队列，若不填，则自动创建一个匿名队列
+          group: login-queue
+        addUserEvent-int-0:
+          destination: add-user-exchange
+          # 同一个组内消息，只能被消费一次，多个消费者只有一个消费掉消息
+          group: add-user-queue
+          content-type: application/json
+        deleteUserEvent-int-0:
+          destination: delete-user-exchange
+          group: delete-user-queue
+          content-type: text/plain
+    function:
+      definition: loginConsumerEvent;addUserEvent;deleteUserEvent

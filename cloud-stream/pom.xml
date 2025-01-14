@@ -15,7 +15,7 @@
 
     <modules>
 <!--        <module>cloud-stream-kafka</module>-->
-<!--        <module>cloud-stream-rabbit</module>-->
+<!--         <module>cloud-stream-rabbit</module> -->
 <!--        <module>cloud-stream-rocketmq</module>-->
     </modules>
 </project>

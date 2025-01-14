@@ -14,8 +14,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>cloud-stream-rabbit-sender</module>
-        <module>cloud-stream-rabbit-consumer-a</module>
-        <module>cloud-stream-rabbit-consumer-b</module>
+        <!-- <module>cloud-stream-rabbit-sender</module> -->
+        <!-- <module>cloud-stream-rabbit-consumer-a</module> -->
+        <!-- <module>cloud-stream-rabbit-consumer-b</module> -->
+        <!-- <module>cloud-stream-starter-stream-rabbit</module> -->
     </modules>
 </project>
