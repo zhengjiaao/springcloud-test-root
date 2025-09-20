@@ -6,8 +6,9 @@
  * @Date: 2021-10-22 16:52
  * @Since:
  */
-package com.zja.feign;
+package com.zja.feign.test;
 
+import com.zja.feign.test.model.UserDTO;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -24,7 +25,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @Component
 @FeignClient(name = "remote-web-rest", url = "http://127.0.0.1:19000"/*, configuration = RestFeignClientConfiguration.class*/)
-public interface RestFeignClient {
+public interface RestFeign {
 
     //get
 

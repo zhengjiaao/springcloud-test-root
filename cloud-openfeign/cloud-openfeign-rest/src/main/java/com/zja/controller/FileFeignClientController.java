@@ -8,9 +8,9 @@
  */
 package com.zja.controller;
 
-import com.zja.feign.FileFeignClient;
-import com.zja.feign.FileUploadRequest;
-import com.zja.feign.UserDTO;
+import com.zja.feign.test.FileFeign;
+import com.zja.feign.test.model.FileUploadRequest;
+import com.zja.feign.test.model.UserDTO;
 import feign.Response;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -39,19 +39,19 @@ import java.net.URLEncoder;
 public class FileFeignClientController {
 
     @Autowired
-    private FileFeignClient fileFeignClient;
+    private FileFeign fileFeign;
 
     @PostMapping(value = "/post/upload/v1")
     @ApiOperation(value = "post-上传单文件", notes = "返回 true")
     public Object postFile(@ApiParam("上传文件") @RequestPart(value = "file") MultipartFile file) {
-        fileFeignClient.postFile(file);
+        fileFeign.postFile(file);
         return true;
     }
 
     @PostMapping(value = "/post/upload/v2")
     @ApiOperation(value = "post-上传多文件", notes = "返回 true")
     public Object postFile(@RequestPart(value = "files") MultipartFile[] files) {
-        fileFeignClient.postFile(files);
+        fileFeign.postFile(files);
         return true;
     }
 
@@ -59,7 +59,7 @@ public class FileFeignClientController {
     @ApiOperation(value = "post-上传单文件和字符串", notes = "返回 true")
     public Object postFile(@ApiParam("上传文件") @RequestPart(value = "file") MultipartFile file,
                            @ApiParam("新文件名称") @RequestParam String filename) {
-        fileFeignClient.postFile(file, filename);
+        fileFeign.postFile(file, filename);
         return true;
     }
 
@@ -67,7 +67,7 @@ public class FileFeignClientController {
     @ApiOperation(value = "post-上传单文件和json对象", notes = "返回 true")
     public Object postFile(@ApiParam("上传文件") @RequestPart(value = "file") MultipartFile file,
                            @ApiParam("对象") @RequestBody UserDTO userDTO) {
-        fileFeignClient.postFile(file, userDTO);
+        fileFeign.postFile(file, userDTO);
         return true;
     }
 
@@ -75,7 +75,7 @@ public class FileFeignClientController {
     @ApiOperation(value = "post-上传单文件和json对象", notes = "返回 true")
     public Object postFileV42(@ApiParam("上传文件") @RequestPart(value = "file") MultipartFile file,
                            @ApiParam("对象") @RequestBody UserDTO userDTO) {
-        fileFeignClient.postFile(FileUploadRequest.builder().file(file).id(userDTO.getId()).name(userDTO.getName()).date(userDTO.getDate()).build());
+        fileFeign.postFile(FileUploadRequest.builder().file(file).id(userDTO.getId()).name(userDTO.getName()).date(userDTO.getDate()).build());
         return true;
     }
 
@@ -83,7 +83,7 @@ public class FileFeignClientController {
     @ApiOperation(value = "post-上传多文件和字符串", notes = "返回 true")
     public Object postFile(@RequestPart(value = "files") MultipartFile[] files,
                            @ApiParam("新文件名称") @RequestParam String filename) {
-        fileFeignClient.postFile(files, filename);
+        fileFeign.postFile(files, filename);
         return true;
     }
 
@@ -91,7 +91,7 @@ public class FileFeignClientController {
     @ApiOperation(value = "post-上传多文件和字符串", notes = "返回 true")
     public Object postFile(@RequestPart(value = "files") MultipartFile[] files,
                            @ApiParam("对象") @RequestBody UserDTO userDTO) {
-        fileFeignClient.postFile(files, userDTO);
+        fileFeign.postFile(files, userDTO);
         return true;
     }
 
@@ -101,7 +101,7 @@ public class FileFeignClientController {
     @ApiOperation(value = "下载文件-文件URL")
     public String downloadfileURL(@ApiParam(value = "filename", defaultValue = "3840x2160.jpg") @RequestParam String filename) throws Exception {
 
-        String url = fileFeignClient.downloadfileURL(filename);
+        String url = fileFeign.downloadfileURL(filename);
 
         URL httpurl = new URL(url);
         String urlFileName = getFileNameFromUrl(url);
@@ -117,7 +117,7 @@ public class FileFeignClientController {
     public void downloadfileStream(HttpServletResponse response,
                                    @ApiParam(value = "filename", defaultValue = "3840x2160.jpg") @RequestParam String filename) throws Exception {
         // feign文件下载
-        Response feignResponse = fileFeignClient.downloadfileStream(filename);
+        Response feignResponse = fileFeign.downloadfileStream(filename);
         Response.Body body = feignResponse.body();
         byte[] bytes = toByteArray(body.asInputStream());
         response.setContentType("application/force-download");

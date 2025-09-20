@@ -19,6 +19,12 @@ feign:
       filefeign-client:
         connectTimeout: 2000  # 默 1s，连接超时 2s
         readTimeout: 180000   # 默 1s，读取超时 180s 大文件处理可能会出现读取超时
+      ims-client:
+        connectTimeout: 2000  # 默 1s，连接超时 2s
+        readTimeout: 180000   # 默 1s，读取超时 180s
+      dme-client:
+        connectTimeout: 2000  # 默 1s，连接超时 2s
+        readTimeout: 180000   # 默 1s，读取超时 180s
   httpclient:
     enabled: true  # 默认true
     follow-redirects: true        # 跟随重定向
@@ -43,6 +49,13 @@ feign:
   autoconfiguration:
     jackson:
       enabled: false # 默认 false
+  ims:
+    url: http://192.168.6.100:1800/dgp-ims-web
+  dme:
+    url: http://192.168.1.100:1801/dme
+    max-running-models: 10 # 模型运行最大数量
+    model-running-check-interval: 10 # 模型运行检查间隔，单位：秒 推荐： 3s< 值 <60s
+    model-running-status-update-interval: 5  # 模型运行状态更新间隔，单位：秒 推荐： 3s< 值 <30s
 
 
 # http://localhost:18000/swagger-ui/index.html#/

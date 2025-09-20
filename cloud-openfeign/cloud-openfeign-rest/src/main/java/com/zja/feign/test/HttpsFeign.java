@@ -6,7 +6,7 @@
  * @Date: 2021-10-25 9:53
  * @Since:
  */
-package com.zja.feign;
+package com.zja.feign.test;
 
 import com.zja.config.IgnoreSSLCheckConfiguration;
 import io.swagger.annotations.ApiOperation;
@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  */
 @Component
 @FeignClient(name = "remote-web-https", url = "https://192.168.2.128:19001", configuration = IgnoreSSLCheckConfiguration.class)
-public interface HttpsFeignClient {
+public interface HttpsFeign {
 
     //get
 

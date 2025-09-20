@@ -6,8 +6,10 @@
  * @Date: 2021-10-22 16:55
  * @Since:
  */
-package com.zja.feign;
+package com.zja.feign.test;
 
+import com.zja.feign.test.model.FileUploadRequest;
+import com.zja.feign.test.model.UserDTO;
 import feign.Response;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -25,7 +27,7 @@ import org.springframework.web.multipart.MultipartFile;
  */
 @Component
 @FeignClient(name = "remote-web-file", contextId = "filefeign-client", url = "http://127.0.0.1:19000")
-public interface FileFeignClient {
+public interface FileFeign {
 
     //文件上传
 

@@ -1,4 +1,4 @@
-package com.zja.feign;
+package com.zja.feign.test.model;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

@@ -8,8 +8,8 @@
  */
 package com.zja.controller;
 
-import com.zja.feign.RestFeignClient;
-import com.zja.feign.UserDTO;
+import com.zja.feign.test.RestFeign;
+import com.zja.feign.test.model.UserDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,51 +26,51 @@ import org.springframework.web.bind.annotation.*;
 public class RestFeignClientController {
 
     @Autowired
-    private RestFeignClient restFeignClient;
+    private RestFeign restFeign;
 
     //get
 
     @GetMapping(value = "/get")
     @ApiOperation(value = "get-无参数", notes = "返回字符串")
     public Object get() {
-        return restFeignClient.get();
+        return restFeign.get();
     }
 
     @GetMapping(value = "/get/{path}")
     @ApiOperation(value = "get-路径参数")
     public Object getPath1(@PathVariable("path") String path) {
-        return restFeignClient.getPath1(path);
+        return restFeign.getPath1(path);
     }
 
     @GetMapping(value = "/get/param")
     @ApiOperation(value = "get-拼接参数")
     public Object getPath2(@RequestParam("path") String path) {
-        return restFeignClient.getPath2(path);
+        return restFeign.getPath2(path);
     }
 
     @Deprecated // 无法正确接收参数
     @GetMapping(value = "/get/param/v2")
     @ApiOperation(value = "get-拼接参数", notes = "对象属性参数，相当于 @RequestParam(required = false) 属性名")
     public Object getObject(UserDTO userDTO) {
-        return restFeignClient.getParam2(userDTO);
+        return restFeign.getParam2(userDTO);
     }
 
     @GetMapping(value = "/get/param/v3")
     @ApiOperation(value = "get-拼接参数", notes = "对象属性参数，相当于 @RequestParam(required = false) 属性名")
     public Object getObject3(UserDTO userDTO) {
-        return restFeignClient.getParam3(userDTO);
+        return restFeign.getParam3(userDTO);
     }
 
     @GetMapping(value = "/get/object/v1")
     @ApiOperation(value = "get-无参数", notes = "返回对象")
     public Object getObject() {
-        return restFeignClient.getObject();
+        return restFeign.getObject();
     }
 
     @GetMapping(value = "/get/object/list/v1")
     @ApiOperation(value = "get-无参数", notes = "返回List")
     public Object getObjectList() {
-        return restFeignClient.getObjectList();
+        return restFeign.getObjectList();
     }
 
     //post
@@ -78,7 +78,7 @@ public class RestFeignClientController {
     @PostMapping(value = "/post")
     @ApiOperation(value = "post-无参数", notes = "返回字符串")
     public Object post() {
-        return restFeignClient.post();
+        return restFeign.post();
     }
 
     /*@PostMapping(value = "/post/param")
@@ -91,13 +91,13 @@ public class RestFeignClientController {
     @PostMapping(value = "/post/object/v1")
     @ApiOperation(value = "post-无参数", notes = "返回对象")
     public Object postObject() {
-        return restFeignClient.postObject();
+        return restFeign.postObject();
     }
 
     @PostMapping(value = "/post/object/v2")
     @ApiOperation(value = "post-对象参数", notes = "返回对象")
     public Object postObject(@RequestBody UserDTO userDto) {
-        return restFeignClient.postObject(userDto);
+        return restFeign.postObject(userDto);
     }
 
     //put
@@ -105,7 +105,7 @@ public class RestFeignClientController {
     @PutMapping(value = "/put")
     @ApiOperation(value = "put-无参数", notes = "返回字符串")
     public Object put() {
-        return restFeignClient.put();
+        return restFeign.put();
     }
 
     /*@PutMapping(value = "/put/param")
@@ -117,13 +117,13 @@ public class RestFeignClientController {
     @PutMapping(value = "/put/object/v1")
     @ApiOperation(value = "put-无参数", notes = "返回对象")
     public Object putObject() {
-        return restFeignClient.postObject();
+        return restFeign.postObject();
     }
 
     @PutMapping(value = "/put/object/v2")
     @ApiOperation(value = "put-对象参数", notes = "返回对象")
     public UserDTO putObject(@RequestBody UserDTO userDto) {
-        return restFeignClient.putObject(userDto);
+        return restFeign.putObject(userDto);
     }
 
     //delete
@@ -131,13 +131,13 @@ public class RestFeignClientController {
     @DeleteMapping(value = "/delete")
     @ApiOperation(value = "delete-无参数", notes = "返回字符串")
     public Object delete() {
-        return restFeignClient.delete();
+        return restFeign.delete();
     }
 
     @DeleteMapping(value = "/delete/{path}")
     @ApiOperation(value = "delete-路径参数")
     public Object deletePath1(@PathVariable("path") String path) {
-        return restFeignClient.deletePath1(path);
+        return restFeign.deletePath1(path);
     }
 
   /*  @DeleteMapping(value = "/delete/param")
@@ -149,7 +149,7 @@ public class RestFeignClientController {
     @DeleteMapping(value = "/delete/object/v1")
     @ApiOperation(value = "delete-无参数", notes = "返回对象")
     public Object deleteObject() {
-        return restFeignClient.deleteObject();
+        return restFeign.deleteObject();
     }
 
   /*  @DeleteMapping(value = "/delete/object/v2")

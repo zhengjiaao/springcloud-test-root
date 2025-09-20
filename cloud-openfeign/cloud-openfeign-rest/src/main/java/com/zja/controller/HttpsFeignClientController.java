@@ -8,7 +8,7 @@
  */
 package com.zja.controller;
 
-import com.zja.feign.HttpsFeignClient;
+import com.zja.feign.test.HttpsFeign;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,20 +28,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class HttpsFeignClientController {
 
     @Autowired
-    private HttpsFeignClient httpsFeignClient;
+    private HttpsFeign httpsFeign;
 
     //get
 
     @GetMapping(value = "/get")
     @ApiOperation(value = "get-无参数", notes = "返回字符串")
     public Object get() {
-        return httpsFeignClient.get();
+        return httpsFeign.get();
     }
 
     @GetMapping(value = "/get/{path}")
     @ApiOperation(value = "get-路径参数")
     public Object getPath1(@PathVariable("path") String path) {
-        return httpsFeignClient.getPath1(path);
+        return httpsFeign.getPath1(path);
     }
 
 
